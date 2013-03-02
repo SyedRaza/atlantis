@@ -1,0 +1,28 @@
+<%= content_for :sidebar do %>
+    <%= render :partial => 'filter' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>Contacts</h1>
+    <%= link_to '<span class="ui-icon ui-icon-document">&nbsp;</span>New Contact'.html_safe, new_contact_url, :class=>'right', :style=>'margin-right:50px;' %>
+<% end %>
+
+<%= content_for :js do %>
+    <%= javascript_include_tag "contacts/index" %>
+    <%= javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+    <%= stylesheet_link_tag "contacts/index" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+
+<div id="contacts_container" class="sidetabs-container">
+  <div id="contact_selector" class="sidetabs-tabs">
+
+    <%= side_tabs_for_alphabets(:contacts) %>
+
+  </div>
+  <div id="contacts" class="sidetabs-pane">
+  </div>
+</div>

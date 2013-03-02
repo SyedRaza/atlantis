@@ -1,0 +1,14 @@
+<%= quick_search("show", ["note-type", "posted-by"]) %>
+
+<% if @contact.leads.present? %>
+    <h2>Leads</h2>
+  <div class="lead_list_detail" >
+
+    <% @contact.leads.each do |o| %>
+      <%= render :partial => 'leads/show_compact',
+        :locals=>{:leads=>o} %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= show_signature @contact %>

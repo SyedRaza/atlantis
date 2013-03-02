@@ -1,0 +1,50 @@
+ul.list-headers {
+    background-color: #F2F2F2;
+/*    background-image: url("../images/list_header_back.jpg");*/
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #AAAAAA;
+    border-top: 1px solid #AAAAAA;
+    clear: both;
+    display: block;
+    height: 25px;
+    list-style: none outside none;
+    padding: 3px;
+    width: 100%;
+}
+
+ul.list-headers li a,
+ul.list-headers li {
+    display: inline-block;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+    margin-right: 5px;
+
+}
+
+.lilst-row {
+    display: block;
+    clear: both;
+    background: none !important;
+}
+
+.lilst-row:hover {
+    display: inline-block;
+    width: 100%;
+    border-bottom: #AAAAAA dotted 1px;
+    padding: 3px;
+    clear: both;
+}
+
+.lilst-row li {
+    display: inline-block;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 5px;
+}

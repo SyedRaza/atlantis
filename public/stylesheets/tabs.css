@@ -1,0 +1,101 @@
+#main-tabs{
+  display: block;
+  float: left;
+  margin-top: -31px;
+  width: 100%;
+}
+.tabs {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+}
+.tabs li {
+  float:left;
+	padding:0;
+	list-style-image:none !important;
+  display: block;
+  margin-right: 10px;
+  vertical-align: bottom;
+  height: 30px;
+}
+.tabs * {
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.tabs a:hover{
+  text-decoration: none;
+}
+.tabs a{
+  display: block;
+  height: 25px;
+  padding: 0 10px 0 10px;
+  margin: 5px 0 0 0;
+  line-height: 25px;
+  background-image: url("/images/tab-back.jpg");
+  color: #FFF;
+  cursor: pointer;
+
+  border-top: #1e93d1 solid 1px;
+  border-left: #1e93d1 solid 1px;
+  border-right: #1e93d1 solid 1px;
+
+  -moz-border-radius: 5px 5px 0px 0px;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  -moz-text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  -webkit-text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+}
+.tabs a:hover{
+  background-image: url("/images/tab-back-active.jpg");
+  color: #0E84A5;
+}
+.tabs .current,
+.tabs .current:hover,
+.tabs li.current a,
+.tabs a:active{
+  background-image: url("/images/tab-back-active.jpg");
+  color: #171717;
+  height: 30px;
+  margin: 0;
+  line-height: 30px;
+  border-bottom: #daf1fd solid 1px;
+}
+#menu-strip{
+  display: block;
+  float: left;
+  width: 100%;
+  background-image: url("/images/menu-strip-back.jpg");
+  background-position: top;
+  background-repeat: repeat-x;
+  height: 24px;
+  
+  border-bottom: #88d5fe solid 1px;
+  border-top: #1e93d1 solid 1px;
+}
+#menu-strip .pane {
+	display:none;
+}
+#menu-strip a{
+  color: #171717;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 32px;
+  line-height: 24px;
+  display: block;
+  float: left;
+
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+}
+#menu-strip a:hover{
+  text-decoration: underline;
+}
+#menu-strip a.current{
+  background-image: url("/images/active-option-arrow.png");
+  background-repeat: no-repeat;
+  background-position: 50% 24px;
+}

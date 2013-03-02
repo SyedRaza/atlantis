@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @testing.title %>
+</p>
+<p>
+    <%= @testing.xdocs.first.attachment.url %>
+</p>
+
+<p>
+    <%= @testing.xdocs.first.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_testing_path(@testing) %> |
+<%= link_to 'Back', testings_path %>

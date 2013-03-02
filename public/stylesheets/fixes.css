@@ -1,0 +1,74 @@
+.ui-jqgrid {
+    height: 100%;
+}
+
+.ui-jqgrid-view {
+    height: 100%;
+}
+
+.ui-jqgrid-pager {
+    margin-top: -26px;
+}
+
+.ui-jqgrid-title {
+    cursor: move;
+}
+
+.ui-jqgrid-titlebar-close {
+    display: none;
+}
+
+td[dir="ltr"] {
+    display: none;
+}
+
+form.formtastic fieldset > ol > li.select input.ui-autocomplete-input {
+    width: 70%;
+    max-width: 70%;
+    background-color: #FFF;
+    border: #BBBBBB solid 1px;
+    font-size: 12px;
+    color: #222;
+
+    -moz-border-radius: 0 0 0;
+    -webkit-border-radius: 0 0 0;
+}
+
+.ui-widget {
+    background-color: #FFF;
+}
+
+button.ui-button-icon-only {
+    height: 2em;
+    width: 2.4em;
+}
+
+.ui-menu .ui-menu-item {
+    font-size: 0.8em;
+}
+
+form.formtastic input[role="textbox"],
+input.ui-autocomplete-input {
+    width: auto;
+    max-width: 70%;
+}
+
+.ui-widget {
+    font-size: 1em;
+    font-weight: normal; /*max-width: 60%;*/
+}
+
+.ui-addvance-autocomplete {
+    background-image: none;
+}
+
+.ui-addvance-autocomplete.loading {
+    background-image: url("/images/icons/loading_active.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.ui-icon {
+    display: inline-block;
+    vertical-align: top;
+}

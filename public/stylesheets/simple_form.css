@@ -1,0 +1,122 @@
+.simple_form label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    margin: 2px 10px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.simple_form label.top {
+    float: left;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 1px;
+    margin-top: 5px;
+}
+
+.simple_form textarea,
+.simple_form select,
+.simple_form input {
+    background-color: #FFF;
+    border: #BBBBBB solid 1px;
+    font-size: 12px;
+    color: #222;
+    margin-right: 17px;
+}
+
+.simple_form input {
+    height: 18px;
+    padding: 2px;
+}
+
+.simple_form select {
+    height: 25px;
+    padding: 2px;
+}
+
+.simple_form input:focus,
+.simple_form select:focus,
+.simple_form textarea:focus {
+    outline: none;
+    border: #0AA9E8 solid 1px;
+    -moz-box-shadow: 0px 0px 5px rgba(10, 169, 232, 0.3);
+    -webkit-box-shadow: 0px 0px 5px rgba(10, 169, 232, 0.3);
+}
+
+.simple_form div.input {
+    margin-bottom: 5px;
+}
+
+.simple_form div.no-label {
+    margin-left: 120px;
+}
+
+.simple_form div.float {
+    float:left;
+    width:auto;
+}
+
+.simple_form div.boolean {
+/*margin-left: 120px; */
+    margin-left: 0;
+}
+
+.simple_form div.boolean label {
+    float: none;
+    margin: 0;
+}
+
+.simple_form fieldset {
+    border-top: 1px dotted #8c8c8c;
+    margin-bottom: 20px;
+    padding: 5px 0px 10px 0px;
+    position: relative;
+}
+
+.simple_form fieldset > legend {
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+    padding: 0;
+    position: absolute;
+    top: -22px;
+}
+
+.simple_form fieldset.collapsible > legend {
+    padding-right: 15px;
+    background-image: url("/images/icons/slider-up.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.simple_form fieldset.collapsed > legend {
+    padding-right: 15px;
+    background-image: url("/images/icons/slider-down.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.simple_form .hint {
+    display: block;
+    color: #AAAAAA;
+    font-size: 0.9em;
+}
+
+div.error {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: -4px;
+
+    background-color: #EEE;
+    border: #AAA solid 1px;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    font-size: 0.9em;
+}

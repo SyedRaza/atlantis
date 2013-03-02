@@ -1,0 +1,21 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <% if params[:action] == "new" %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %><br/>
+    <% end %>
+    <%= f.input :time_zone, :include_blank=>false %>
+    <% if current_user.role? :admin %>
+        <%= f.simple_fields_for :user_roles do |ur| %>
+            <%= ur.association :role, :as => :select, :label=> "Select Role", :include_blank=>false%>
+        <% end %>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit :class=>'button big' %> <span style="vertical-align: bottom">or</span>
+      <%= link_to "Cancel", request.referrer %>
+
+    </div>
+<% end %>

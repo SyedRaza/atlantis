@@ -1,0 +1,14 @@
+<div id="all-leads" class="qfilter">
+  <h3>Select Lead</h3><br/>
+  <% Lead.all.each do |lead| %>
+      <%= link_to lead.title, '', :id=>"#{lead.id}" %>
+      <br/>
+  <% end %>
+</div>
+<div id="all-vteams" class="qfilter">
+  <h3>Select Vteam</h3><br/>
+  <% Vteam.all.each do |vteam| %>
+      <%= link_to vteam.name, '', :id=>"#{vteam.id}" %>
+      <br/>
+  <% end %>
+</div>

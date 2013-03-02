@@ -1,0 +1,23 @@
+<thead>
+      <tr>
+        <th width="175"></th>
+        <% @roles.each do |r| %>
+        <th><h2><%= r.name.humanize  %> </h2>
+              <%= r.description %>
+          </th>
+        <% end %>
+      </tr>
+</thead>
+<tbody>
+      <tr class="<%= cycle('even', 'odd')  %> ">
+        <td></td>
+        <% @roles.each do |r| %>
+          <td class="<%=  cycle('odd', 'even') %>" >
+            <div class="action" >All</div>
+            <div class="action">Read</div>
+            <div class="action">Create</div>
+            <div class="action">Edit</div>
+            <div class="action">Delete</div>
+          </td>
+        <% end %>
+      </tr>

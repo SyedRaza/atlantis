@@ -1,0 +1,4 @@
+<%= f.simple_fields_for(:detail) do |d| %>
+    <%= d.input :description, :as=>:text, :label=>false, :input_html=>{:rows=>7, :style=>'width:99%'} %>
+    <%#= d.input :attachment, :as=>:file %>
+<% end %>

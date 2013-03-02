@@ -1,0 +1,153 @@
+/* 
+    Document   : index
+    Created on : Jan 17, 2011, 2:41:06 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#lead_selector {
+    width: 80px;
+}
+.sidetabs-container .sidetabs-pane{
+    width:670px;
+    overflow: hidden;
+}
+#leads_container{
+    min-height: 400px;
+}
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.9em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+
+
+/*--------------------- New Listing Style -------------------------*/
+
+.leads_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.lead .type.active {
+    background-color: #98FB98;
+}
+
+.lead .type.fullfilled {
+    background-color: #AFEEEE;
+}
+
+.lead .type.fell.off {
+    background-color: #D8BFD8;
+}
+
+.lead .type.sleeping {
+    background-color: #DCDCDC;
+}
+.lead .type.all
+{
+    background-color: #00BFFF;
+}
+.lead .type.old.leads {
+    background-color: #bebcbc;
+}
+
+.lead .type.long.term.followup {
+    background-color: #eaeaa0;
+}
+
+.lead {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.lead:hover  {
+    background-color: seashell;
+}
+.lead:hover .actions{
+    display:block;
+}
+
+.lead div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.lead .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.lead .name {
+    font-size: 12px;
+}
+
+.lead .contact-detail {
+
+}
+
+.lead .type > strong {
+    font-size: 10px;
+}
+
+.lead .small {
+    font-size: 11px;
+}
+
+.lead .gray {
+    color: #696969;
+}
+
+.lead .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.lead .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.lead .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+
+/*--------------------- New Listing Style -------------------------*/

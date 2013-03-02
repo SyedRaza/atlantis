@@ -1,0 +1,5 @@
+<%= simple_form_for  @search, :remote=>true do |f|   %>
+  <%= f.input :date_effective_greater_than_or_equal_to, :label=>'', :hint=>'From', :input_html=>{:class=>'datepicker'}  %>
+  <%= f.input :date_effective_less_than_or_equal_to, :label=>'', :hint=>'To', :input_html=>{:class=>'datepicker'}%>
+  <%= f.button :submit, "Search" %>
+<% end %>

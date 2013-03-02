@@ -1,0 +1,56 @@
+<br/>
+<h2><%= @opportunity.source_type %></h2>
+<%#= show_for @opportunity.source do |s| %>
+<%if @opportunity.source_type == "Lead" %>
+  <%= show_for @selection do |s| %>
+    <%#= s.attribute :title, :to_sentence=>true %>
+    <%= s.association :lead_type if s.object.lead_type.present?-%>
+    <%= s.association :lead_status if s.object.lead_status.present?-%>
+    <%= s.association :lead_source if s.object.lead_source.present?-%>
+  <% end %>
+  <br class="clear" /><br />
+  <h2>Contact</h2>
+  <% if @selection.contact.present? %>
+    <%= show_for @selection.contact do |c| %>
+      <%= c.attribute :complete_name, :label => "Name" %>
+      <%= c.association :phones, :to_sentence=>true if c.object.phones.present?-%>
+      <%= c.association :emails, :to_sentence=>true if c.object.emails.present?-%>
+    <% end %>
+  <% end %>
+  <br class="clear" /><br />
+  <h2>Company</h2>
+  <% if @selection.company.present? %>
+    <%= show_for @selection.company do |com| %>
+      <%= com.attribute :title %>
+      <%= com.association :emails, :to_sentence=>true if com.object.emails.present?-%>
+      <%= com.association :websites, :to_sentence=>true if com.object.websites.present?-%>
+      <%= com.association :industry if com.object.industry.present?-%>
+    <% end %>
+  <% end %>
+<% elsif @opportunity.source_type == "Vteam" %>
+  <%= show_for @selection do |s| %>
+    <%= s.attribute :name, :to_sentence=>true if s.object.name.present?-%>
+    <%= s.association :vteam_status  if s.object.vteam_status.present?-%>
+    <%= s.attribute :start_date  if s.object.start_date.present?-%>
+  <% end %>
+  <br class="clear" /><br />
+  <h2>Contact</h2>
+  <% if @selection.lead.present? %>
+    <%= show_for @selection.lead.contact do |c| %>
+      <%= c.attribute :complete_name, :label => "Name" %>
+      <%= c.association :phones, :to_sentence=>true if c.object.phones.present?-%>
+      <%= c.association :emails, :to_sentence=>true if c.object.emails.present?-%>
+    <% end %>
+  <% end %>
+  <br class="clear" /><br />
+  <h2>Company</h2>
+  <% if @selection.lead.company.present? %>
+    <%= show_for @selection.lead.company do |com| %>
+      <%= com.attribute :title if com.object.title.present? -%>
+      <%= com.association :emails, :to_sentence=>true if com.object.emails.present?-%>
+      <%= com.association :websites, :to_sentence=>true if com.object.websites.present?-%>
+      <%= com.association :industry if com.object.industry.present?-%>
+    <% end %>
+  <% end %>
+  <br class="clear" /><br />
+<% end %>

@@ -1,0 +1,14 @@
+<%= show_for @resource_vteam_allocation do |s| %>
+  <%= s.association :vteam %>
+  <%= s.association :resource %>
+  <%= s.attribute :join_date %>
+  <%= s.association :resource_type %>
+  <%= s.attribute :billing_rate %>
+  <%= s.attribute :active %>
+  <%= s.attribute :reason %>
+  <%= s.attribute :release_date %>
+  <%= s.association :resource_billing_type %>
+  
+<% end %>
+
+

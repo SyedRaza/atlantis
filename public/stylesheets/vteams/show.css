@@ -1,0 +1,139 @@
+/* 
+    Document   : show
+    Created on : Jan 25, 2011, 11:19:29 AM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+aside#left-bar .label {
+    width: auto;
+}
+
+div.show-details .list-row{
+    border-bottom: none;
+}
+
+#col-one{
+    display: inline-block;
+    float:left;
+    width:40%;
+}
+#col-two{
+    display: inline-block;
+    width: 40%;
+}
+.read-display-fields{
+    margin-bottom: 20px;
+    width:100%;
+}
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.85em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 5px 4px;
+}
+.bottom-border #resource_vteam_allocations {
+
+    float:right;
+    display:none;
+}
+#newxdoc{
+    margin-bottom: 10px !important;
+}
+.bottom-border  #vacations {
+
+    float:right;
+    display:none;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+
+}
+.simple_form input.button {
+    /*    background-image: url("/images/button_back.jpg");*/
+    display: inline-block;
+    /*    background-repeat: repeat-x;*/
+    /*    opacity: 0.8;*/
+    background-color: #d4d4d4;
+    padding: 0px 10px;
+    height: 25px;
+
+    /*    -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;*/
+
+    border: #AAA solid 1px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.simple_form select{
+    height: 20px;
+    padding: 0px;
+    width: 161px;
+}
+.simple_form input.button:hover{
+    background-color: #E5E5E5;
+    opacity: 1;
+    text-decoration: none;
+    color: #005CB8;
+}
+.simple_form input{
+    height: 16px;
+}
+.simple_form input.string{
+    height: 16px;
+    width:155px;
+}
+.simple_form textarea{
+}
+/*.simple_form input.combobox{
+    height: 16px;
+    width:155px !important;
+}*/
+.ui-autocomplete-input{
+    width: 180px;
+}
+
+.vteam{
+    width: 960px;
+}
+div.show-details label{
+    color: #AAAAAA;
+    font-weight: normal;    
+}
+div.show-details{
+    min-height: 0px;
+}
+.show_text {
+ white-space: normal;
+
+}
+.data-list .list-row li{
+    white-space: normal;
+}
+div#dynamic-ajax-container .list-headers{
+    background: none;
+}
+
+.ui-state-error{
+  
+    border-color: #fff;
+}

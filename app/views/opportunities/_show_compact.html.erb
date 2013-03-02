@@ -1,0 +1,14 @@
+<div class="opportunity_list">
+  <%= show_for opportunities do |op| %>
+
+    <dl class="wrapper">
+      <dt class="label"><span class="ui-icon ui-icon-battery-0">&nbsp;</span></dt>
+      <dd class="content"><%= link_to op.object.title_with_seat, opportunity_url( op.object ) %> </dd>
+    </dl>
+    <%= op.association :opportunity_type, :label=>"Type" if op.object.opportunity_type.present?-%>
+    <%= op.association :opportunity_status, :label=> "Status" if op.object.opportunity_status.present?-%>
+
+  <% end %>
+</div>
+
+

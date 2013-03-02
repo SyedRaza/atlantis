@@ -1,0 +1,11 @@
+<%= content_for :css do %>
+  <%= stylesheet_link_tag "vacations/index" %>
+
+<% end %>
+<%= content_for :header do %>
+  <h1>Listing Vacations</h1>
+
+<% end %>
+
+
+ <%= render :partial =>"list" %>

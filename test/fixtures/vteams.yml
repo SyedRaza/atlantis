@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  vteam_status_id: 1
+  start_date: 2011-01-11
+  lead_id: 1
+  dev_manager: MyString
+  working_hours: MyString
+  dev_center_id: 1
+  billing_mode_id: 1
+  approved_on: 2011-01-11
+  flag_id: 1
+  developers: MyText
+  intent_to_start: MyText
+  startup_advice: MyText
+  technologies: MyText
+  special_note: MyText
+  key_dates: MyText
+  updated_by_client: false
+
+two:
+  name: MyString
+  vteam_status_id: 1
+  start_date: 2011-01-11
+  lead_id: 1
+  dev_manager: MyString
+  working_hours: MyString
+  dev_center_id: 1
+  billing_mode_id: 1
+  approved_on: 2011-01-11
+  flag_id: 1
+  developers: MyText
+  intent_to_start: MyText
+  startup_advice: MyText
+  technologies: MyText
+  special_note: MyText
+  key_dates: MyText
+  updated_by_client: false

@@ -1,0 +1,21 @@
+<%= content_for :page_header do  %>
+  <h1>Register to System</h1>
+<% end %>
+
+<%= content_for :css do  %>
+  <%= stylesheet_link_tag 'themes/login'  %>
+<% end %>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.input :email, :input_html=>{:size=>20} %>
+  <%= f.input :password, :input_html=>{:size=>20} %>
+  <%= f.input :password_confirmation, :input_html=>{:size=>20} %>
+  <%= f.input :time_zone %>
+
+  <%= f.button :submit, 'Register', :button_html=>{:class=>'button big'} %>
+
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

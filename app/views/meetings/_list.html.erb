@@ -1,0 +1,36 @@
+<div>
+  <span><%= raw page_entries_info @meetings %></span>
+</div>
+<ul id="meetings_new_list" class="meetings_new_list">
+  <% @meetings.each do |m| %>
+    <li id="list-row-<%= m.id %>" class="meeting_new">
+      <div class="type <%= m.meeting_type.to_s.underscore %>">
+        <%= truncate("#{m.meeting_type}", :length => 12) %>
+        <br/>
+
+        <span class="small gray age"><%= m.age %></span>
+
+      </div>
+      <div class="name">
+        <%= link_to m.date_of_meeting, meeting_url(m) %>
+      </div>
+      <div class="small gray">
+        <%= "#{m.location}" %>
+      </div>
+      <br/>
+
+      <div class="small gray">
+        <%= "Attendies: #{m.number_of_attendees}" %>
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', meeting_path(m.id)) %>
+          <%= o.item link_to('Edit', edit_meeting_path(m.id)) %>
+          <%= o.item link_to('New Note', "meetings/#{m.id}/notes/new", :class=>"display-new-note", :id=>m.id) %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= processed_pagination(@meetings) %>

@@ -1,0 +1,8 @@
+$('<div />').attr('id','new_contact_dialog').appendTo('body');
+$('#new_contact_dialog').html('');
+$('#new_contact_dialog').attr('title', 'Create New Contact');
+$('#new_contact_dialog').html('<%= escape_javascript( render :partial => 'min_form') %> ');
+$('#new_contact_dialog').dialog({
+  width:470,
+  height:370
+});

@@ -1,0 +1,16 @@
+<%= data_list_for @contacts do |l| %>
+    <%= l.blank_column { "&nbsp".html_safe } %>
+    <%= l.column :age, :width=>40 %>
+    <%= l.column :complete_name, :as=>:root_link, :width=>140, :label=>'Title' %>
+    <%= l.column :current_company, :width=>140, :label=>'Companies' %>
+    <%= l.column :phones, :value_method=>:first, :width=>160, :label=>'Phone' %>
+    <%= l.column :emails, :value_method=>:first, :width=>160, :label=>'Email' %>
+    <%= l.options_column :class=>'options', :width=>30 do %>
+        <%= link_item 'Show', contact_path(object.id) %>
+        <%= link_item 'Edit', edit_contact_path(object.id) %>
+        <%= link_item 'New Note', "contacts/#{object.id}/notes/new", :class=>"display-new-note", :id=>object.id %>
+
+    <% end %>
+<% end %>
+<%= processed_pagination(@contacts) %>
+

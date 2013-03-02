@@ -1,0 +1,46 @@
+<br/>
+<div class="total-records">
+  <%= raw page_entries_info @vacations %>
+</div>
+
+
+<% if @vacations.length == 0 %>
+    <br/><b><%#= "No vacations Yet" %></b>
+<% else %>
+    <ol class="data-list">
+
+
+      <ul class="list-headers">
+        <li style="width:20px">&nbsp;</li>
+        <li style="width:200px">Name</li>
+        <% @vacation_type.each do |type| %>
+            <li style="width:80px"> <%= type.title.titleize %>  </li>
+        <% end %>
+        <li style="width:80px">Total</li>
+
+      </ul>
+      <% @vacations.each do |vacation| %>
+          <ul id="<%= vacation.id %>" class="list-row <%= cycle('odd', 'even') %>">
+            <li id="details">
+              <a href="/vteams/<%= vacation.resource_vteam_allocation.vteam_id %>/vacations/details/<%= vacation.resource_vteam_allocation_id %>" id="<%= vacation.id %>"
+                 class='ui-state-highlight plus'><span class="ui-icon ui-icon-plus"></span></a>
+
+            </li>
+            <li><%= vacation.resource_vteam_allocation.resource.name unless vacation.resource_vteam_allocation.resource.nil? %></li>
+
+            <% @vacation_type.each do |type| %>
+                <li><%= count_leaves(vacation.resource_vteam_allocation_id, type.title) %></li>
+            <% end %>
+
+            <li><%= count_leaves(vacation.resource_vteam_allocation_id) %></li>
+
+          </ul>
+      <% end %>
+    </ol>
+<% end %>
+<br/>
+
+<%= will_paginate @vacations %>
+
+
+

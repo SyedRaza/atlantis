@@ -1,0 +1,150 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag "vteams/show" %>
+  <%= stylesheet_link_tag "vacations/index" %>
+  <%= stylesheet_link_tag "resource_vteam_allocation/index" %>
+  <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<% content_for :js do %>
+  <%= javascript_include_tag 'notes/global' %>
+  <%= javascript_include_tag "vteams/show" %>
+  <%= javascript_include_tag "jquery.expander" %>
+  <%= javascript_include_tag "jquery.collapsorz_1.1" %>
+<% end %>
+
+<%= content_for :header do %>
+  <h1><%= @vteam.name %></h1>
+  <%= link_to 'Close', vteams_path, :class=>'button big right' %>
+  <%= link_to 'Edit', edit_vteam_path(@vteam), :class=>'button big right' %>
+  <%= link_to "Create Opportunity", new_vteam_opportunity_path(@vteam), :class=>'button big right' %>
+<% end %>
+<% content_for :sidebar do %>
+  <%= render :partial=>'show_sidebar' %>
+<% end %>
+<%= show_for @vteam do |v| %>
+  <div class="read-display-fields">
+    <div class="col" id="col-one">
+
+      <% if @vteam.lead.present? %>
+        <%= show_for @vteam.lead.contact do |c| %>
+          <%= c.attribute :complete_name, :label=>"Contact" %>
+        <% end %>
+      <% end %>
+
+      <% unless @vteam.vteam_status.blank? %>
+        <div class="show_for">
+          <%= v.attribute :vteam_status, :label=>"Vteam Status" %>
+        </div>
+      <% end %>
+
+
+      <% unless @vteam.flag.blank? %>
+        <div class="show_for">
+          <%= v.association :flag %>
+        </div>
+      <% end %>
+
+
+      <% unless @vteam.billing_mode.blank? %>
+        <div class="show_for">
+          <%= v.attribute :billing_mode %>
+        </div>
+      <% end %>
+
+
+  <%# unless @vteam.dev_center.blank? %>
+          <!--<div class="show_for"><%#= v.attribute :name, :in=>:dev_center %></div> -->
+  <%#end %>
+
+    </div>
+    <div class="col" id="col-two">
+      <div class="show_for">
+        <% unless @vteam.dev_manager.blank? %><%= v.attribute :dev_manager %>
+        <% end %>
+      </div>
+      <div class="show_for">
+        <% unless @vteam.approved_on.blank? %><%= v.attribute :approved_on %>
+        <% end %>
+      </div>
+      <div class="show_for">
+        <% unless @vteam.start_date.blank? %><%= v.attribute :start_date %>
+        <% end %>
+      </div>
+      <div class="show_for">
+        <% unless @vteam.working_hours.blank? %><%= v.attribute :working_hours %>
+        <% end %>
+      </div>
+      <div class="show_for">
+        <% unless @vteam.updated_by_client.blank? %><%= v.attribute :updated_by_client, :label => "Update to Client" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% unless @vteam.technologies.blank? %>
+    <dl class="wrapper vteams_technologies">
+      <dt class="label">Technologies</dt>
+      <dd class="content"><%= simple_format(@vteam.technologies) %></dd>
+    </dl>
+  <% end %>
+  <% unless @vteam.intent_to_start.blank? %>
+    <dl class="wrapper vteams_intent_to_start">
+      <dt class="label">Intent to start</dt>
+      <dd class="content"><%= simple_format(@vteam.intent_to_start) %></dd>
+    </dl>
+  <% end %>
+  <% unless @vteam.startup_advice.blank? %>
+    <dl class="wrapper vteams_startup_advice">
+      <dt class="label">Startup Advice</dt>
+      <dd class="content"><%= simple_format(@vteam.startup_advice) %></dd>
+    </dl>
+  <% end %>
+  <% unless @vteam.developers.blank? %>
+    <dl class="wrapper vteams_developers">
+      <dt class="label">Developers</dt>
+      <dd class="content"><%= simple_format(@vteam.developers) %></dd>
+    </dl>
+  <% end %>
+  <% unless @vteam.key_dates.blank? %>
+    <dl class="wrapper vteams_key_dates">
+      <dt class="label">Key dates</dt>
+      <dd class="content"><%= simple_format(@vteam.key_dates) %></dd>
+    </dl>
+  <% end %>
+  <% unless @vteam.special_note.blank? %>
+    <dl class="wrapper vteams_special_note">
+      <dt class="label">Special Note</dt>
+      <dd class="content"><%= simple_format(@vteam.special_note) %></dd>
+    </dl>
+  <% end %>
+<% end %>
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <ul class="tabs">
+    <li><a class="current" href="/vteams/<%= @vteam.id %>/notes">Notes</a></li>
+    <li><a href="/vteams/<%= @vteam.id %>/resource_vteam_allocations">Resources</a></li>
+    <li><a href="/vteams/<%= @vteam.id %>/vacations">Vacation</a></li>
+  </ul>
+  <div id="notes">
+    <%= if can?(:create, Note) then
+      render_note_type_menu('Add New Note', vteam_path(@vteam))
+    end %>
+  </div>
+
+  <div id="resource_vteam_allocations">
+    <%= link_to("<span class='ui-icon ui-icon-document'>&nbsp;</span> Attach Resource".html_safe,
+      url_for(:controller =>:resource_vteam_allocations, :action => :new, :vteam_id=>@vteam.id)
+    ) %>
+  </div>
+  <div id="vacations">
+    <%= link_to("<span class='ui-icon ui-icon-document'>&nbsp;</span> Add Vacations".html_safe,
+      url_for(:controller =>:vacations, :action => :new, :vteam_id=>@vteam.id)
+    ) %>
+  </div>
+</div>
+<br class="clear"/>
+<div id="newxdoc">
+</div>
+<div id="dynamic-ajax-container">
+  <div class="notes-container">
+  </div>
+</div>

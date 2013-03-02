@@ -1,0 +1,43 @@
+<div id="<%= @placement.id %>" class="placement-detail">
+
+  <div id="close">
+    <a class="thick-view-close" id="<%= @placement.id %>" href=''><img src='/themes/white/images/icons/cross-active.png'></img></a>
+  </div>
+  <div id="placement-left">
+    <div id="age">
+      <%= @placement.age %>
+    </div>
+
+  </div>
+  <div id="placement-right">
+    <div id="title-date">
+
+      <h3><%= link_to @placement.date_effective, placement_url(@placement) %></h3>
+
+
+    </div>
+    <div id="placement-situation">
+      <div id="upper"><b>Available Resource:</b>
+        <%= simple_format @placement.available_resources %></div>
+      <div id="upper"><b>Freeing Up from Vteams:</b>
+        <%= simple_format @placement.freeing_up_resources %></div>
+      <div id="upper"><b>Reserved Resource:</b>
+        <%= simple_format @placement.reserved_resources %></div>
+      <div id="lower"><b>Summary:</b>
+        <%= simple_format @placement.summary %></div>
+    </div>
+  </div>
+  <div id="placement-thick-view-options" class="thick-view-options">
+    <%= options_menu do |m| %>
+        <%= m.item link_to 'Show', placement_path(@placement) %>
+        <%= m.item link_to 'Edit', edit_placement_path(@placement) %>
+        <%= m.item link_to 'Copy As New', {:controller=>:placements, :action=>:new, :copy_id=>@placement.id} %>
+        <%= m.item link_to 'New Note', "placements/#{@placement.id}/notes/new", :class=>"display-new-note", :id=>@placement.id %>
+    <% end %>
+  </div>
+  <div class="notes-heading">
+    <h3>Notes</h3>
+  </div>
+  <%= render :partial => 'shared/notes_list', :locals => {:notes=>@placement.notes[0..2]} %>
+
+</div>

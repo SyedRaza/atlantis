@@ -1,0 +1,25 @@
+#login-container {
+    width: 500px;
+    padding: 0;
+    margin: 0 auto;
+    padding-top:80px;
+}
+
+#logo {
+    height: 100px;
+    float: left;
+    display: block;
+}
+
+#authentication {
+    float: right;
+    width: 355px;
+    border-left:#AAA solid 1px;
+    padding-left:15px;
+    overflow-x: hidden;
+}
+#authentication > header {
+    display:block;
+    clear:right;
+/*    height: 15px;*/
+}

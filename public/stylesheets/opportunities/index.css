@@ -1,0 +1,162 @@
+/* 
+    Document   : index
+    Created on : Jan 17, 2011, 2:40:59 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#opportunity_selector {
+    width: 80px;
+}
+
+.sidetabs-container .sidetabs-pane{
+    width:670px;
+    overflow: hidden;
+}
+
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.9em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+/*#details > a{
+    background-image: url("/themes/white/images/icons/plus-active.png");
+    background-repeat: no-repeat;
+    display: block;
+}
+#details > a:hover{
+    text-decoration: none;
+}*/
+ 
+
+/*--------------------- new listing style -------------------------*/
+
+.opportunities_new_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.opportunity_new .type.active {
+    background-color: #98FB98;
+}
+
+.opportunity_new .type.all
+{
+    background-color: #00BFFF;
+}
+
+.opportunity_new .type.dropped {
+    background-color: #eaeaa0;
+}
+
+.opportunity_new .type.inactive {
+    background-color: #E5E5E5;
+}
+
+.opportunity_new .type.fulfilled {
+    background-color: pink;
+}
+.opportunity_new {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.opportunity_new:hover  {
+    background-color: seashell;
+}
+.opportunity_new:hover .actions{
+    display:block;
+}
+
+.opportunity_new div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.opportunity_new .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.opportunity_new .name {
+    font-size: 12px;
+}
+
+.opportunity_new .contact-detail {
+
+}
+
+.opportunity_new .type > strong {
+    font-size: 10px;
+}
+
+.opportunity_new .small {
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.opportunity_new .gray {
+    color: #696969;
+}
+
+.opportunity_new .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.opportunity_new .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.opportunity_new .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+.small.gray a{
+    color: gray;
+}
+.name a{
+    color: gray;
+}
+.name a:hover{
+    color: #00A6EC;
+}
+/*--------------------- new listing style -------------------------*/

@@ -1,0 +1,48 @@
+<div id="lead_chart" style="width: 100%; height: 200px;"></div>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        var options = {
+            chart: { renderTo: 'lead_chart' },
+            title: { text: 'New Lead in Current Week' },
+            credits : { enabled: false },
+            plotOptions:{
+                line: {
+                    lineWidth : 1
+                },
+                series:{
+                    marker :{
+                        enabled: true,
+                        radius : 3
+                    }
+                }
+            },
+            xAxis: {
+                type: 'datetime',
+                maxZoom: 48 * 3600 * 1000
+            },
+            yAxis:{
+                title: {
+                    text: ''
+                },
+                min : 0-0.2,
+                max : <%= @lead_counts.max %>+0.5,
+                endOnTick : false,
+                startOnTick : false
+            },
+            legend:{
+                enabled : false
+            },
+            series: [
+                {
+                    name: 'Lead Count',
+                    pointStart: Date.parse("<%= @lead_dates[0] %>"),
+                    pointInterval: 24 * 3600 * 1000 ,
+                    data:<%= @lead_counts.inspect %>
+                }
+            ]
+        };
+
+        new Highcharts.Chart(options);
+    });
+</script> 

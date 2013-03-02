@@ -1,0 +1,7 @@
+<%= quick_search("index", ["title", "type", "status"],opportunities_url) %>
+<hr class="ver-gap"/>
+<h2>Filter By</h2>
+<hr class="ver-gap"/>
+<%= filters_for_associations(:opportunities, [:opportunity_status, :opportunity_type]) %>
+
+

@@ -1,0 +1,23 @@
+<%= simple_form_for([@resource_vteam_allocation.vteam, @resource_vteam_allocation],:remote=>true, :html=>{:multipart=>true}) do |f| %>
+  <%= f.error_notification %>
+  <div class="inputs">
+    <% if (params[:action].to_sym != :release ) %>
+
+      <%= f.association :resource, :required=>:true,:collection=>@selected_resource, :label_method=>:descrpitive_title %>
+
+      <%= f.input :join_date,:as=>:string,  :required=>:true, :input_html=>{:class=>'datepicker'} %>
+      <%= f.input :resource_type, :required=>:true, :label=>"Joining As" %>
+      <%= f.association :resource_billing_type, :required=>:true, :label=>"Billing Type"  %>
+      <%= f.input :billing_rate, :as=>:string, :required=>:true, :hint=>"ex: 78.02" %>
+
+    <%else%>
+      <%= f.input :active,:as=>:hidden %>
+      <%= f.input :release_date, :required=>:true, :as=>:string, :input_html=>{:class=>'datepicker'} %>
+      <%= f.input :reason,:required=>:true, :input_html=>{:rows => "7",
+        :cols => "70" } %>
+    <%end%>
+  </div>
+  <div class="actions" >
+    <%= f.button :submit, :class=>'button big' %> <span style="vertical-align: bottom">or</span> <%= link_to "Cancel", "#", :id=>'new-xdoc-cancel' %>
+  <% end %>
+</div>

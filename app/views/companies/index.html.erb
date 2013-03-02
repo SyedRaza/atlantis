@@ -1,0 +1,26 @@
+<%= content_for :js do %>
+ <%=javascript_include_tag "companies/index" %>
+ <%=javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+ <%= stylesheet_link_tag "companies/index" %>
+ <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+
+<%= content_for :sidebar do %>
+ <%= render :partial => 'filter'%>
+<% end %>
+
+<%= content_for :header do %>
+ <h1>Companies</h1>
+ <%= link_to '<span class="ui-icon ui-icon-document">&nbsp;</span>New Company'.html_safe, new_company_url, :class=>'right', :style=>'margin-right:50px;' %>
+<% end %>
+
+<div id="companies_container" class="sidetabs-container">
+  <div id="companies_selector" class="sidetabs-tabs">
+   <%=  side_tabs_for_alphabets(:companies) %>
+  </div>
+  <div id="companies" class="sidetabs-pane">
+  </div>
+</div>

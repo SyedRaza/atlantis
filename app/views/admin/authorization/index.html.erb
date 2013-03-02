@@ -1,0 +1,26 @@
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag 'admin/authorizations/index' %>
+<% end %>
+<%= content_for :js do %>
+    <%= javascript_include_tag 'admin/authorizations/index' %>
+<% end %>
+<%= content_for :header do %>
+    <h1>Authorization</h1>
+<% end %>
+<%= simple_form_for(:admin_authorizations, @resource, :action=>'update_permissions') do |f| %>
+    <table class="data-table">
+      <%= render 'permissions_header', :locals=>{:f=>f} %>
+      <% @counter = 0 %>
+      <% for resource in @resources %>
+          <%= f.simple_fields_for "resources[]", resource do |f2| %>
+              <tr class="<%= cycle('even', 'odd') %> ">
+                <td class="<%= cycle('odd', 'even') %>">
+                  <%= raw '<div class="space" >&nbsp;</div>' unless resource.parent_resource == nil %>
+                  <%= resource.class_name.humanize %>
+                </td>
+                <%= render :partial=>'permission_details', :locals=>{:f=>f2} %>
+              </tr>
+          <% end %>
+      <% end %>
+    </table>
+<% end %>

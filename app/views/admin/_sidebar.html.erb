@@ -1,0 +1,106 @@
+<%= content_for :js do %>
+  <%= javascript_include_tag 'admin/index' %>
+<% end %>
+<div id="accordion">
+  <h2 class="current">General</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Address Types', '/admin/address_types' %></li>
+      <li><%= link_to 'Phone Types', '/admin/phone_types' %></li>
+      <li><%= link_to 'Email Types', '/admin/email_types' %></li>
+      <li><%= link_to 'Website Types', '/admin/website_types' %></li>
+      <li><%= link_to 'Messenger Types', '/admin/messenger_types' %></li>
+      <li><%= link_to 'Messenger Services', '/admin/messenger_services' %></li>
+      <li><%= link_to 'Countries', '/admin/countries' %></li>
+      <li><%#= link_to 'Plugins', '/admin/plugins' %></li>
+      <li><%#= link_to 'Authorizations', '/admin/authorizations' %></li>
+    </ul>
+  </div>
+  <h2>Companies</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Industries', '/admin/industries' %></li>
+    </ul>
+  </div>
+  <h2>Contacts</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Contact Status', '/admin/contact_statuses' %></li>
+      <li><%= link_to 'Contact Types', '/admin/contact_types' %></li>
+      <li><%= link_to 'Contact Directory', '/admin/contact_directories' %></li>
+    </ul>
+  </div>
+  <h2>Leads</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Lead Types', '/admin/lead_types' %></li>
+      <li><%= link_to 'Lead Statuses', '/admin/lead_statuses' %></li>
+      <li><%= link_to 'Lead Sources', '/admin/lead_sources' %></li>
+    </ul>
+  </div>
+  <h2>Opportunities</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Opportunity Types', '/admin/opportunity_types' %></li>
+      <li><%= link_to 'Opportunity Statuses', '/admin/opportunity_statuses' %></li>
+    </ul>
+  </div>
+
+  <h2>Vteams</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Vteam Statuses', '/admin/vteam_statuses' %></li>
+      <li><%= link_to 'Dev Centers', '/admin/dev_centers' %></li>
+      <li><%= link_to 'Flags', '/admin/flags' %></li>
+    </ul>
+  </div>
+  <h2>Notes</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Notes Types', '/admin/note_types' %></li>
+    </ul>
+  </div>
+
+  <h2>Meetings</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Types', '/admin/meeting_types' %></li>
+    </ul>
+  </div>
+  <h2>Users</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Users', :controller=>"admin/users", :action=>"index" %></li>
+      <li><%= link_to 'Add User', '/admin/users/new' %></li>
+    </ul>
+  </div>
+
+  <h2>Resources</h2>
+
+  <div class="pane">
+    <ul>
+      <li><%= link_to 'Resources', '/admin/resources' %></li>
+      <li><%= link_to 'Types', '/admin/resource_types' %></li>
+      <li><%= link_to 'Vacation Types', '/admin/vacation_types' %></li>
+      <li><%= link_to 'Billing Types', '/admin/resource_billing_types' %></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<%#= content_tag :ul do %>
+<%#= content_tag :li do link_to 'Address Types', '/admin/address_types'  end%>
+<%#= content_tag :li do link_to 'Address Types', '/admin/address_types'  end%>
+<%#= link_to 'Attached Documents Types', '/admin/attached_documents_default_types' %>
+<%# end %>
+

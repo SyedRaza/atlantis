@@ -1,0 +1,28 @@
+<%= simple_form_for(@placement) do |f| %>
+  
+    <%= f.error_notification %>
+    <h2>Placement Information</h2>
+    <div class="inputs">
+      <%= f.input :date_effective, :label => "Date Effective",
+                  :as => :string, :input_html => {:class => "datepicker"}%>
+      <%= f.input :available_resources, :label => "Available Resources",
+                  :input_html=>{:rows=>7, :cols=>70}%>
+      <%= f.input :freeing_up_resources, :label => "Freeing Up From Vteams",
+                  :input_html=>{:rows=>7, :cols=>70}%>
+      <%= f.input :reserved_resources, :label => "Reserved Resources",
+                  :input_html=>{:rows=>7, :cols=>70} %>
+      <%= f.input :summary, :label => "Summary",
+                  :input_html => {:rows => 7, :cols => 70 }%>
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit %>
+      <span style="vertical-align: bottom">or</span>
+      
+      <% if @placement.new_record? %>
+        <%= link_to 'Cancel', placements_path, :id=>"remove", :class=>'big' %>
+      <% else %>
+        <%= link_to 'Cancel', placement_url(@placement), :id=>"remove", :class=>'big' %>
+      <% end %>
+    </div>
+  <% end %>

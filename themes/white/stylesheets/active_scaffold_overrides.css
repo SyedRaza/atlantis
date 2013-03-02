@@ -1,0 +1,109 @@
+.active-scaffold-header h2 {
+/*    font-size: inherit;*/
+    color: inherit;
+}
+.active-scaffold-header {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    position: inherit;
+    width: 100%;
+    clear:both;
+    text-align:right;
+}
+
+.active-scaffold table {
+    border-collapse: inherit;
+}
+
+.active-scaffold table thead {
+    background-color: #f2f2f2;
+}
+
+.active-scaffold table thead > tr {
+    width: 100%;
+    height: 20px;
+
+    /* background-image: url("../images/list_header_back.jpg");
+    background-position: bottom;
+    background-repeat: repeat-x; */
+    border-top: #AAA solid 1px;
+    border-bottom: #AAA solid 1px;
+    padding: 3px;
+}
+
+.active-scaffold th.sorted,
+.active-scaffold th {
+    background-color: inherit;
+    height: 20px;
+    line-height: 20px;
+    font-weight: bold;
+/*    font-size: 0.9em;*/
+    letter-spacing: 0.1em;
+    word-spacing: 0.1em;
+    margin-right: 5px;
+}
+
+.active-scaffold th.desc a,
+.active-scaffold th.desc a:hover,
+.active-scaffold th.asc a,
+.active-scaffold th.asc a:hover,
+.active-scaffold th a {
+    color: inherit;
+    background-color: transparent;
+    display: inline;
+}
+
+.active-scaffold th a:hover {
+    text-decoration: underline;
+    background-color: inherit;
+    color: inherit;
+/*    font-size: inherit;*/
+/*    font-weight: inherit;*/
+}
+
+.active-scaffold tr.record {
+    width: 100%;
+    padding: 2px;
+    margin: 0;
+/*    font-size: 0.9em;*/
+    background-color: #FFF;
+}
+
+.active-scaffold tr.record:hover {
+    background-color: #EEE;
+}
+
+.active-scaffold tr.record td {
+    border: none;
+    border-bottom: #AAAAAA dotted 1px;
+}
+
+.active-scaffold tr.record td.sorted {
+    background-color: inherit;
+    border: none;
+    border-bottom: #AAAAAA dotted 1px;
+}
+
+.active-scaffold a,
+.active-scaffold a:visited,
+.active-scaffold tr.record td.actions a,
+.active-scaffold tr.record td.actions span {
+    color: #00a6ec;
+    text-decoration: none;
+/*    font-size: 1em;*/
+    background-color: inherit;
+    font-weight: normal;
+}
+
+.active-scaffold a:hover {
+    font-weight: normal;
+    color: #0AA9E8;
+/*    font-size: 1em;*/
+    text-decoration: underline;
+    background-color: inherit;
+}
+
+.active-scaffold tr.record td.actions table {
+    border: none;
+}

@@ -1,0 +1,140 @@
+/* 
+    Document   : new
+    Created on : Jan 13, 2011, 2:56:23 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*.tooltip {
+	display:none;
+	background-color: #efefef;
+    background-repeat: no-repeat;
+	font-size:12px;
+	height: 170px;
+	width:370px;
+    margin-top: -120px;
+    margin-left: 30%;
+    border: 1px solid #AAA;
+    position: absolute;
+}*/
+    #opportunity-wizard{
+        width: 105%;
+}
+.tooltip {
+    background-color: #F4F4F4;
+    background-repeat: no-repeat;
+    border: 1px solid #AAAAAA;
+    display: none;
+    font-size: 12px;
+    height: 170px;
+    margin-left: 34%;
+    margin-top: -95px;
+    position: absolute;
+    width: 230px;
+}
+aside#left-bar .label {
+    width: auto;
+}
+#parent{
+    margin-left: 38px;
+    margin-top: 40px;
+
+}
+.parent {
+    margin-left: 92px;
+}
+.filter{
+    margin-left: 32px;
+}
+.qfilter > h3{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    width: 150px;
+}
+.simple_form input.button {
+    /*    background-image: url("/images/button_back.jpg");*/
+    display: inline-block;
+    /*    background-repeat: repeat-x;*/
+    /*    opacity: 0.8;*/
+    background-color: #d4d4d4;
+    padding: 0px 10px;
+    height: 25px;
+    margin-left: 7px;
+
+    /*    -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;*/
+
+    border: #AAA solid 1px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.simple_form select{
+    height: 20px;
+    padding: 0px;
+    width: 207px;
+}
+.simple_form input.button:hover{
+    background-color: #E5E5E5;
+    opacity: 1;
+    text-decoration: none;
+    color: #005CB8;
+}
+.simple_form input{
+    height: 16px;
+    width: 200px;
+}
+#cancel {
+    background-image: url("/images/icons/cross-active.png");
+    background-repeat: no-repeat;
+    float: right;
+    height: 12px;
+    margin-top: -105px;
+    padding-right: 5px;
+    position: relative;
+    width: 12px;
+    text-decoration: none;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 5px 4px;
+}
+.actions input{
+    width: 100px;
+}
+.simple_form label{
+    width: 107px;
+}
+textarea.text {
+    width: 800px;
+}
+.opportunity{
+    width: 960px;
+}
+#ok{
+    margin-left: 42px;
+    margin-top: 15px;
+    background-color: #D4D4D4;
+}
+#all-vteams h3{
+    margin-left: 32px;
+}
+#all-leads h3{
+    margin-left: 32px;
+}
+.hidden{
+    display: none;
+}

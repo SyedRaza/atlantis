@@ -1,0 +1,45 @@
+<li id="note_<%= x.id %>" class="note">
+  <dl>
+    <dt>
+      <em class="cat"><%= x.parent.class.to_s.humanize %>:</em>
+      <% unless x.parent.nil? %>
+          <% if x.parent.class.to_s.humanize =="Opportunity" %>
+              <%= link_to awesome_truncate((x.parent.note_title+" ("+x.parent.source_type.constantize.find(x.parent.source_id).title+")"), 25), "/#{x.parent.class.to_s.pluralize.underscore}/#{x.parent.id}" %>
+          <% else %>
+              <%= link_to awesome_truncate(x.parent.note_title, 25), "/#{x.parent.class.to_s.pluralize.underscore}/#{x.parent.id}" %>
+          <% end %>
+      <% end %>
+      <span style="float: right;">
+    <span class="typ">
+      <% if x.type.present? %>
+        <%= show_type(x.type).join(" &raquo; ").html_safe %>
+      <% else %>
+
+      <% end %>
+    </span>
+    <em>By:</em>
+    <span class="by"><%= x.user.name %></span>
+    <em>On </em>
+        <%= l x.updated_at %>
+  </span>
+    </dt>
+    <dd>
+      <%= render :partial=>"notes/#{x.detail_type.underscore}_show", :locals=>{:detail=>x.detail} %>
+      <span class="options">
+    <%
+       links = Array.new
+       name = @parent_name=='' ? x.parent_type : @parent_name
+       id = @parent_id=='' ? x.parent_id : @parent_id
+
+       if can? :edit, x
+           links <<(link_to "Edit", "/#{name.downcase.pluralize}/#{id}/notes/#{x.id}/edit", :class=>'edit')
+       end
+       if can? :delete, x
+           links << (link_to "Delete", "/#{name.downcase.pluralize}/#{id}/notes/#{x.id}", :method=>:delete, :confirm=>"Are you sure you want to delete this Note?", :remote=>true, :class=>'delete')
+       end
+    %>
+        <%= raw links.join(' | ') %>
+  </span>
+    </dd>
+  </dl>
+</li>

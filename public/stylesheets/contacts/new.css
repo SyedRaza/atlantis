@@ -1,0 +1,180 @@
+#companyInfo ol li:first input {
+    width: 20px;
+}
+
+#company > div.contact_company_profiles_attributes > input {
+    border: none;
+}
+
+#pic {
+    float: left;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    clear: both;
+}
+
+#pic > a {
+    display: inline-block;
+    border: #d8f1fd solid 2px;
+    width: 100px;
+    height: 100px;
+}
+
+#pic > a:hover {
+    border: #88d5fe solid 2px;
+}
+
+#all-companies{
+    display: block;
+    float: left;
+    margin-right: 5px;
+    vertical-align: top;
+    width: 250px;
+}
+
+#companies-buttons{
+    display: inline-block;
+    float: left;
+    height: 200px;
+    margin-right: 10px;
+    padding-top: 43px;
+    vertical-align: middle;
+    width: 25px;
+}
+#your-companies{
+    display:block;
+    width:auto;
+    float:left;
+    vertical-align:top;
+}
+#selectable .ui-selecting {
+    background: #DAF1FD;
+}
+
+#selectable .ui-selected {
+    background: #00A6EC;
+    color: white;
+}
+
+#selectable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#selectable li {
+    margin: 3px;
+    padding: 0.4em;
+    font-size: 1.2em;
+    height: 18px;
+}
+
+#push {
+    
+}
+
+#pop {
+    clear: both;
+}
+
+.inserted {
+    margin-left: 60px;
+}
+
+.tooltip {
+    display: none;
+    background: transparent url(/images/black_arrow.png);
+    font-size: 12px;
+    height: 70px;
+    width: 160px;
+    padding: 25px;
+    color: #fff;
+}
+
+#companyInfo ol li:first input {
+    width: 20px;
+}
+
+#company > li.contact_company_profiles_attributes > input {
+    border: none;
+}
+.ui-autocomplete {
+		max-height: 200px;
+		overflow-y: auto;
+		/* prevent horizontal scrollbar */
+		overflow-x: hidden;
+		/* add padding to account for vertical scrollbar */
+		padding-right: 20px;
+	}
+    .auto {
+        width: auto;
+        margin-right: 10px;
+}
+.simple_form input.button {
+/*    background-image: url("/images/button_back.jpg");*/
+    display: inline-block;
+/*    background-repeat: repeat-x;*/
+/*    opacity: 0.8;*/
+    background-color: #d4d4d4;
+    padding: 0px 10px;
+    height: 25px;
+    margin-left: 7px;
+
+/*    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;*/
+
+    border: #AAA solid 1px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.simple_form input.button:hover{
+    background-color: #E5E5E5;
+    opacity: 1;
+    text-decoration: none;
+    color: #005CB8;
+}
+.simple_form select{
+    height: 20px;
+    padding: 0px;
+    width: 230px;
+}
+.margin {
+    margin-left: 5px;
+}
+.simple_form input{
+    height: 14px;
+    width: 223px;
+}
+.actions button{
+    width: 155px;
+}
+.actions input{
+    width: 100px;
+}
+.simple_form label{
+    width: 106px;
+}
+#contact_additional_info{
+    width: 69%;
+}
+.loopable-options{
+    width: 800px;
+}
+/*#contactInfo .loopable-options input, #companyInfo .loopable-options input {
+    margin-left: 17px;
+}*/
+/*.select_margin{
+    margin-left: 15px;
+}*/
+addressInfo, #generalInfo, #contactInfo, #companyInfo{
+    width: 980px;
+}
+/*.messenger .hint{
+    margin-left: 15px;
+}*/
+/*#zip, #country, #state{
+    margin-left: 17px;
+}*/

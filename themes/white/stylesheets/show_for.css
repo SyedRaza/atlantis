@@ -1,0 +1,34 @@
+div.show_for {
+    width: 100%;
+    float: left;
+}
+
+div.show_for > dl.wrapper {
+    width: auto;
+    display: block;
+    margin: 0;
+    padding: 3px 0;
+    border-bottom: #EEE dotted 1px;
+}
+
+div.show_for > dl.wrapper > dt.label {
+    display: table-cell;
+    width: 125px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: normal;
+/*    font-size: 1em;*/
+    color: #AAA;
+    padding-right: 10px;
+}
+
+div.show_for > dl.wrapper > dd {
+    display: table-cell;
+}
+
+div.show_for h3 {
+    font-size: 1.1em;
+    border-bottom: #AAA dotted 1px;
+    color: #595959;
+}
+

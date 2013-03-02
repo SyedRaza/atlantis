@@ -1,0 +1,22 @@
+<div id="new_company" >
+  <div  class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-new_company_dialog">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">`
+      <span class="ui-dialog-title" id="ui-dialog-title-new_company_dialog">Create New Company</span>
+      <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
+        <span class="ui-icon ui-icon-closethick" id="clear-company">close</span></a>
+    </div>
+    <div id="new_company_dialog" class="ui-dialog-content ui-widget-content">
+      <%= f.simple_fields_for :company do |company| %>
+        <%= company.input :title, :input_html=>{:size=>'20',:class=>'fix'} %>
+        <%= company.association :industry %>
+        <%= company.simple_fields_for :phones do |phone| %>
+          <%= phone.association :phone_type, :label=>"Phone Type", :input_html=>{:class=>'auto fix'} %>
+          <%= phone.input :phone_number, :label=>"Phone Number", :input_html=>{:size=>'15',:class=>'fix'} %>
+        <% end %>
+      <%end%>
+
+      <%= link_to "Save", "#", :id=> "save-company", :class=>"button big" %> or
+      <%= link_to "Cancel", "#", :id=> "clear-company" %>
+    </div>
+  </div>
+</div>

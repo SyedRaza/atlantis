@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vteam_id: 1
+  resource_id: 1
+  join_date: 2011-03-24 12:21:36
+  resource_role_id: 1
+  billing_rate: 1.5
+  active: false
+  reason: MyText
+  release_date: 2011-03-24 12:21:36
+  bill_type_id: 1
+  updated_by: 1
+
+two:
+  vteam_id: 1
+  resource_id: 1
+  join_date: 2011-03-24 12:21:36
+  resource_role_id: 1
+  billing_rate: 1.5
+  active: false
+  reason: MyText
+  release_date: 2011-03-24 12:21:36
+  bill_type_id: 1
+  updated_by: 1

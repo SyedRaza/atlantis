@@ -1,0 +1,9 @@
+$('<div />').attr('id','new_contact_dialog').appendTo('body');
+$('#new_contact_dialog').html('');
+$('#new_contact_dialog').attr('title', 'Create New Contact');
+$('#new_contact_dialog').html('<%= escape_javascript( render :partial => 'min_form') %> ');
+$('#new_contact_dialog').dialog({
+  width:435,
+  height:250
+});
+$('#contact_phones_attributes_0_phone_type_id').combobox();

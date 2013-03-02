@@ -1,0 +1,17 @@
+<%= quick_search("index", ["location", "attendees"],meetings_url) %>
+<hr class="ver-gap"/>
+<h2>Date Range</h2>
+<hr class="ver-gap"/>
+<%= simple_form_for  @search, :remote=>true do |f|   %>
+  <%= f.input :date_of_meeting_greater_than_or_equal_to, :label=>'',:hint=>'From', :input_html=>{:class=>'datepicker'}  %>
+  <%= f.input :date_of_meeting_less_than_or_equal_to, :label=>'',:hint=>'To', :input_html=>{:class=>'datepicker'}%>
+  <%= f.button :submit, "Search" %>
+<% end %>
+<hr class="ver-gap"/>
+<h2>Filter By</h2>
+<hr class="ver-gap"/>
+
+<%= filters_for_associations(:meetings, [:meeting_type]) %>
+<hr class="ver-gap"/>
+
+<div id="meetings_stats"></div>

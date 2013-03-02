@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  time:
+    formats:
+      default: "%e-%b-%Y, %H:%M %Z"
+      time: "%H:%M %Z"
+  date:
+    formats:
+      db: "%Y-%m-%d"
+      default: "%d %b %Y"
+  date_time:
+    formats:
+      db: "%Y-%m-%d"
+      default: "%d %b %Y"
+
+  simple_form:
+    helpers:
+      submit:
+        create: "Save"
+        update: "Update"
+
+
+  time_with_zone:
+    formats:
+      default: "%e-%b-%y %H:%M %Z"
+
+  helpers:
+    submit:
+      create: "Save"
+      update: "Update"

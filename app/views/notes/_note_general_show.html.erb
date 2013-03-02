@@ -1,0 +1,5 @@
+<%= simple_format( detail.description ) %>
+<br/>
+<% unless detail.attachment_file_name.nil? %>
+    <%= link_to detail.attachment_file_name, detail.attachment.url %>
+<% end %>

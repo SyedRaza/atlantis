@@ -1,0 +1,25 @@
+<%= content_for :css do %>
+  <%= theme_stylesheet_link_tag 'meetings/new' %>
+<% end %>
+<%= simple_form_for(@meeting) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :date_of_meeting, :as=>:string, :label=>'Date', :input_html=>{:class=>'datepicker', :size=>20} %>
+    <%= f.input :start_time, :as=>:time, :label=>'Start Time' %>
+    <%= f.input :end_time, :as=>:time, :label=>'End Time'%>
+    <%= f.input :location, :input_html=>{:size=>20} %>
+    <%= f.association :meeting_type, :allow_blank=>false,:prompt =>false %>
+    <%= f.input :attendees, :input_html=>{:rows=>7, :cols=>70} , :hint=>'Please specify persons seperated by commas'%>
+    <%= f.input :minutes_of_meeting, :input_html=>{:rows=>7, :cols=>70} %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, :class => 'button big', :input_html=>{} %> or
+    <% if @meeting.new_record? %>
+      <%= link_to 'Cancel', meetings_path, :class=>'big' %>
+    <% else %>
+      <%= link_to 'Cancel', meeting_url(@meeting), :class=>'big' %>
+    <% end %>
+  </div>
+<% end %>

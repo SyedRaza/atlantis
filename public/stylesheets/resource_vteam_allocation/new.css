@@ -1,0 +1,72 @@
+/* 
+    Document   : new
+    Created on : Feb 4, 2011, 10:10:05 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    
+}
+.simple_form input.button {
+/*    background-image: url("/images/button_back.jpg");*/
+    display: inline-block;
+/*    background-repeat: repeat-x;*/
+/*    opacity: 0.8;*/
+    background-color: #d4d4d4;
+    padding: 0px 10px;
+    height: 25px;
+
+/*    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;*/
+
+    border: #AAA solid 1px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.simple_form select{
+    height: 20px;
+    padding: 0px;
+    width: 161px;
+}
+.simple_form input.button:hover{
+    background-color: #E5E5E5;
+    opacity: 1;
+    text-decoration: none;
+    color: #005CB8;
+}
+.simple_form input{
+    height: 16px;
+    width: 155px;
+}
+.ui-autocomplete-input{
+    width: 180px;
+}
+.actions input {
+    width: 100px;
+}
+#vteam_submit{
+    width: auto;
+}
+textarea.text {
+    width: 84%;
+}
+.vteam{
+    width: 960px;
+}
+#vteam_opportunity_submit{
+    width: auto;
+}

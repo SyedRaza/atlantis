@@ -1,0 +1,12 @@
+#! /bin/bash
+
+ruby db/etl/xdoctype.rb            
+ruby db/etl/detail.rb               
+ruby db/etl/companycreated.rb                 
+ruby db/etl/insertcompany.rb                 
+ruby db/etl/contactcreated.rb                 
+ruby db/etl/insertcontacts.rb
+ruby db/etl/insert_contact_company.rb                 
+ruby db/etl/leadcontactid.rb                 
+ruby db/etl/leadcompanyid.rb                                  
+

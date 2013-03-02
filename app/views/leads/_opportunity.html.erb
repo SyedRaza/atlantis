@@ -1,0 +1,13 @@
+<%= simple_form_for @opp do |f| %>
+  <% f.simple_fields_for :opportunities do |o| %>
+    <%= o.input :title %>
+    <%= o.association :opportunity_type %>
+    <%= o.association :opportunity_status %>
+    <%= o.input :created_effective, :as => :string, :input_html => {:class => "datepicker"} %>
+    <%= o.input :seats %>
+    <%= o.input :experience %>
+    <%= o.input :skill_area %>
+    <%= o.input :note %>
+    <%= o.button :submit %>
+  <% end %>
+<% end %>

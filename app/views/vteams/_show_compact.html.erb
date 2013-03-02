@@ -1,0 +1,14 @@
+<div class="vteam_list" >
+  <%= show_for vteams do |source| %>
+
+    <dl class="wrapper">
+      <dt class="label"><span class="ui-icon ui-icon-battery-0">&nbsp;</span></dt>
+      <dd class="content"><%= link_to source.object.title, vteam_url( source.object ) %> </dd>
+    </dl>
+
+  <%#= source.attribute :name, :to_sentence => true if source.object.name.present?-%>
+    <%= source.association :vteam_status if source.object.vteam_status.present?-%>
+    <%= source.attribute :start_date if source.object.start_date.present?-%>
+
+  <%end%>
+</div>

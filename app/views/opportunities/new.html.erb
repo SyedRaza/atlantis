@@ -1,0 +1,19 @@
+<%= content_for :css do %>
+  <%= stylesheet_link_tag "opportunities/new" %>
+<% end %>
+<%= content_for :js do %>
+  <%= javascript_include_tag "opportunities/new" %>
+<% end %>
+<%= content_for :sidebar do %>
+  <%= render :partial => "new_source_sidebar" %>
+<% end %>
+
+<%= content_for :header do %>
+  <div id="errors"></div>
+  <h1 id="heading">New Opportunity</h1>
+  <%= link_to 'Back', new_opportunity_path, :class=>'button big right', :id => 'back'%>
+  <hr class="ver-gap"/>
+  
+<% end %>
+
+<%= render 'form' %>

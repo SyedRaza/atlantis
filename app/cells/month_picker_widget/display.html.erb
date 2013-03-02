@@ -1,0 +1,25 @@
+<style>
+    .ui-datepicker-calendar {
+        display: none;
+    }
+</style>
+</head>
+<label for="startDate">Date :</label>
+<input name="startDate" id="startDate" class="date-picker"/>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        $(function() {
+            $('.date-picker').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'MM yy',
+                onClose: function(dateText, inst) {
+                    var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, month, 1));
+                }
+            });
+        });
+    });
+</script>

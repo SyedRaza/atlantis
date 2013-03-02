@@ -1,0 +1,6 @@
+<%= quick_search("index", ["name", "company", "email"],contacts_url) %>
+<hr class="ver-gap"/>
+
+
+<%= filters_for_associations(:contacts, [:contact_directory, :contact_status, :contact_type])%>
+

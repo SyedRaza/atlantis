@@ -1,0 +1,40 @@
+<div>
+  <span><%= raw page_entries_info @vteams %></span>
+</div>
+<ul id="vteams_list" class="vteams_list">
+  <% @vteams.each do |v| %>
+    <li id="list-row-<%= v.id %>" class="vteam">
+      <div class="type <%= v.vteam_status.to_s.underscore %>">
+        <%= truncate("#{v.vteam_status}", :length => 12) %>
+        <br/>
+
+        <span class="small gray age"><%= v.age %></span>
+
+      </div>
+      <div class="name">
+        <%= link_to v.name, vteam_url(v) %>
+      </div>
+      <div class="small gray">
+        <%= "DM: #{v.dev_manager}" %>
+
+      </div>
+      <br/>
+      <div class="small gray">
+        <%  unless v.lead.nil? %>
+          <%= link_to(v.lead.title, "/leads/#{v.lead.id}") %>
+          <a href="mailto:<%= v.lead.contact.emails.first %>"><span class="ui-icon ui-icon-mail-closed">&nbsp;</span><span class="gray small"><%= v.lead.contact.emails.first %></span></a>
+        <%  end %>
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', vteam_path(v.id)) %>
+          <%= o.item link_to('Edit', edit_vteam_path(v.id)) %>
+          <%= o.item link_to('New Note', "/vteams/#{v.id}/notes/new", :class=>"display-new-note", :id=>v.id) %>
+        <%= o.item link_to('Create Opportunity', new_vteam_opportunity_path(v.id)) %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= processed_pagination(@vteams) %>

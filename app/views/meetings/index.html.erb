@@ -1,0 +1,26 @@
+<%= content_for :sidebar do %>
+  <%= render :partial => 'filter'%>
+<% end %>
+<%= content_for :header do %>
+ <h1>Meetings</h1>
+ <%= link_to '<span class="ui-icon ui-icon-document">&nbsp;</span>New Meeting'.html_safe, new_meeting_url, :class=>'right', :style=>'margin-right:50px;' %>
+<% end %>
+
+<%= content_for :js do %>
+ <%=javascript_include_tag "meetings/index" %>
+ <%=javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+ <%= stylesheet_link_tag "meetings/index" %>
+ <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+
+<div id="meetingss_container" class="sidetabs-container">
+  <div id="meeting_selector" class="sidetabs-tabs">
+    <%=  side_tabs_for_periods(params[:controller].to_sym,['Today', 'This Week', 'This Month', 'This Year', 'Archives'] )%>
+  </div>
+  <div id="meetings" class="sidetabs-pane">
+    
+  </div>
+</div>

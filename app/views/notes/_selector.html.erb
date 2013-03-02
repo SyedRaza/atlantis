@@ -1,0 +1,7 @@
+<ul>
+  <li><%= link_to "Last 6 Days", "/notes/?limit=6days&filter=#{session[:filter]}", :id=>"6days", :class=>"selected" %></li>
+  <li><%= link_to "This Week", "/notes/?limit=week&filter=#{session[:filter]}", :id=>"week" %></li>
+  <li><%= link_to "This Month", "/notes/?limit=month&filter=#{session[:filter]}", :id=>"month" %></li>
+  <li><%= link_to "This Year", "/notes/?limit=year&filter=#{session[:filter]}", :id=>"year" %></li>
+  <li><%= link_to "Archives", "/notes/?limit=archive&filter=#{session[:filter]}", :id=>"archive" %></li>
+</ul>

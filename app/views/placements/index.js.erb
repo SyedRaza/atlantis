@@ -1,0 +1,4 @@
+$('#placements').html("<%=escape_javascript(render :partial => 'list') %>");
+makeSameWidth( 'ul.list-headers', 'ul.list-row');
+$('.pagination a').attr('data-remote', 'true');
+$('.list-row > #details > a').first().click();

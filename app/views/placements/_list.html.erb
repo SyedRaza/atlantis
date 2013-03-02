@@ -1,0 +1,28 @@
+<div>
+  <span><%= raw page_entries_info @placements %></span>
+</div>
+<ul id="placements_new_list" class="placements_new_list">
+  <% @placements.each do |p| %>
+    <li id="list-row-<%= p.id %>" class="placement_new">
+      <div class="name">
+        <%= link_to p.date_effective, placement_url(p) %>
+      </div>
+      <div class="small gray">
+      </div>
+      <br/>
+      <div class="small gray">
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', placement_path(p.id)) %>
+          <%= o.item link_to('Edit', edit_placement_path(p.id)) %>
+          <%= o.item link_to('New Note', "placements/#{p.id}/notes/new", :class=>"display-new-note", :id=>p.id) %>
+          <%#= o.item link_to('Copy As New', {:controller=>:placements, :action=>:new, :copy_id=>l.id}) %>
+        <% end %>
+      </div>
+    </li>
+
+  <% end %>
+</ul>
+<%= processed_pagination(@placements) %>

@@ -1,0 +1,4 @@
+$('#note_<%=@note.id %>').hide('blind', function() {
+    $('#note_<%=@note.id %>').replaceWith("<%= escape_javascript(render :partial=>'note_list_item', :locals=>{:x=>@note}) %>");
+    $('#note_<%=@note.id %>').show('blind');
+});

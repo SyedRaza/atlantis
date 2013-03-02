@@ -1,0 +1,6 @@
+$('#new-xdoc-cancel').click();
+$('#dynamic-ajax-container').html("<%= escape_javascript(( render :partial => 'list')) %>");
+makeSameWidth( 'ul.list-headers', 'ul.list-row');
+
+$('.pagination a').attr('data-remote', 'true');
+$(".close").hide();

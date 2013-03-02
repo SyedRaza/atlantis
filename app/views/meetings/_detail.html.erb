@@ -1,0 +1,41 @@
+<div id="<%= @meeting.id %>" class="meeting-detail">
+  <div id="close">
+    <a class="thick-view-close" id="<%= @meeting.id %>" href=''><img src='/themes/white/images/icons/cross-active.png'></img></a>
+  </div>
+  <div id="meeting-left">
+    <div id="age">
+      <%= @meeting.age.to_s %>
+    </div>
+  </div>
+  <div id="meeting-right">
+    <div id="title-date">
+      <h3><%= link_to @meeting.date_of_meeting, meeting_url(@meeting) %></h3>
+    </div>
+    <div id="meeting-situation">
+      <div id="upper"><b>Date of Meeting:</b>
+        <%= @meeting.date_of_meeting %></div>
+      <div id="upper"><b>Meeting Type:</b>
+        <%= @meeting.meeting_type %></div>
+      <div id="upper"><b>Meeting start time:</b>
+        <%= @meeting.meeting_start_time %></div>
+      <div id="upper"><b>Meeting time:</b>
+        <%= print_time(@meeting.meeting_time) %></div>
+      <div id="upper"><b>Meeting Location:</b>
+        <%= @meeting.location %></div>
+      <div id="Lower"><b>Number Of Attendes:</b>
+        <%= @meeting.number_of_attendees %></div>
+    </div>
+  </div>
+  <div id="meeting-thick-view-options" class="thick-view-options">
+    <%= options_menu do |m| %>
+        <%= m.item link_to 'Show', meeting_path(@meeting) %>
+        <%= m.item link_to 'Edit', edit_meeting_path(@meeting) %>
+        <%= m.item link_to 'New Note', "meetings/#{@meeting.id}/notes/new", :class=>"display-new-note", :id=>@meeting.id %>
+    <% end %>
+  </div>
+  <div class="notes-heading">
+    <h3>Notes</h3>
+  </div>
+  <%= render :partial => 'shared/notes_list', :locals => {:notes=>@meeting.notes[0..2]} %>
+
+</div>

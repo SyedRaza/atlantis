@@ -1,0 +1,37 @@
+<div id="<%= @lead.id %>" class="lead-detail">
+  <div id="close">
+    <a class="thick-view-close" id="<%= @lead.id %>" href=''><img src='/themes/white/images/icons/cross-active.png'></img></a>
+  </div>
+  <div id="lead-left">
+    <div id="age">
+      <%= @lead.age %>
+    </div>
+    <div id="status">
+      <%= @lead.lead_status.status %>
+    </div>
+  </div>
+  <div id="lead-right">
+    <div id="title-email">
+      <% if @lead.contact.present? %>
+          <h3><%= link_to @lead.contact.complete_name, lead_url(@lead) %></h3>
+          <h5><%= @lead.contact.emails.present? ? @lead.contact.emails.first.email : "No Email Found" %></h5>
+      <% end %>
+    </div>
+    <div id="skill-situation">
+      <div id="upper"><b>Primary Skills:</b> <%= simple_format @lead.primary_skills %></div>
+      <div id="lower"><b>Situation:</b> <%= simple_format @lead.situation %></div>
+    </div>
+  </div>
+  <div id="lead-thick-view-options" class="thick-view-options">
+    <%= options_menu do |m| %>
+        <%= m.item link_to 'Show', lead_path(@lead) %>
+        <%= m.item link_to 'Edit', edit_lead_path(@lead) %>
+        <%= m.item link_to 'New Note', "leads/#{@lead.id}/notes/new", :class=>"display-new-note", :id=>@lead.id %>
+        <%= m.item link_to 'Create Opportunity', new_lead_opportunity_path(@lead) %>
+    <% end %>
+  </div>
+  <div class="notes-heading">
+    <h3>Notes</h3>
+  </div>
+  <%= render :partial => 'shared/notes_list', :locals => {:notes=>@lead.notes[0..2]} %>
+</div>

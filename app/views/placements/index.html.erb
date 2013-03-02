@@ -1,0 +1,26 @@
+<%= content_for :sidebar do %>
+  <%#= render :partial => 'filter'%>
+<% end %>
+
+<%= content_for :header do %>
+  <h1>Placements</h1>
+  <%= link_to '<span class="ui-icon ui-icon-document">&nbsp;</span>New Placement'.html_safe, new_placement_url, :class=>'right', :style=>'margin-right:95px;' %>
+<% end %>
+
+<%= content_for :js do %>
+  <%=javascript_include_tag "placements/index" %>
+  <%=javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+  <%= stylesheet_link_tag "placements/index" %>
+  <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+
+<div id="placements_container" class="sidetabs-container">
+  <div id="placement_selector" class="sidetabs-tabs">
+    <%= side_tabs_for_periods(:placements,['This Week', 'This Month', 'This Year', 'Archives'] )%>
+  </div>
+  <div id="placements" class="sidetabs-pane">
+  </div>
+</div>

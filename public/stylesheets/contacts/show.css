@@ -1,0 +1,29 @@
+/* 
+    Document   : show
+    Created on : Feb 18, 2011, 11:34:08 AM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+aside#left-bar .label {
+    width: auto;
+}
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.85em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 5px 4px;
+}
+

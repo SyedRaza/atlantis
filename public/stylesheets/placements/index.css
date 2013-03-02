@@ -1,0 +1,115 @@
+
+#placement_selector {
+    width: 80px;
+}
+/*.show-details {
+    display:inline-block;
+    min-height:175px;
+    height:auto;
+}*/
+.sidetabs-container .sidetabs-pane {
+    width: 87%;
+}
+
+#filter-type > label {
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+
+/*--------------------- new listing style -------------------------*/
+
+.placements_new_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.placement_new .type.all
+{
+    background-color: #00BFFF;
+}
+
+.placement_new {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.placement_new:hover  {
+    background-color: seashell;
+}
+.placement_new:hover .actions{
+    display:block;
+}
+
+.placement_new div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.placement_new .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.placement_new .name {
+    font-size: 12px;
+}
+
+.placement_new .contact-detail {
+
+}
+
+.placement_new .type > strong {
+    font-size: 10px;
+}
+
+.placement_new .small {
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.placement_new .gray {
+    color: #696969;
+}
+
+.placement_new .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.placement_new .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.placement_new .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+/*--------------------- new listing style -------------------------*/

@@ -1,0 +1,40 @@
+<div>
+  <span><%= raw page_entries_info @contacts %></span>
+</div>
+<ul id="contactsnew__list" class="contacts_new_list">
+  <% @contacts.each do |c| %>
+    <li id="list-row-<%= c.id %>" class="contact_new">
+
+      <div class="type age">
+        <%= c.age %>
+      </div>
+
+      <div class="name">
+        <%= link_to c.complete_name, contact_url(c) %>
+      </div>
+      <div class="small gray">
+        <%= c.companies.first %>
+      </div>
+      <br/>
+
+      <div class="small gray">
+        <% if c.emails.count > 0 %>
+          <a href="mailto:<%= c.emails.first %>"><span class="ui-icon ui-icon-mail-closed">&nbsp;</span><span class="gray small"><%= c.emails.first %></span></a>
+        <% end %>
+        <% if c.phones.count > 0 %>
+          <span class='ui-icon ui-icon-person'>&nbsp;</span><span class="gray small"><%= c.phones.first %></span>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', contact_path(c.id)) %>
+          <%= o.item link_to('Edit', edit_contact_path(c.id)) %>
+          <%= o.item link_to('New Note', "contacts/#{c.id}/notes/new", :class=>"display-new-note", :id=>c.id) %>
+        <% end %>
+      </div>
+    </li>
+
+  <% end %>
+</ul>
+<%= processed_pagination(@contacts) %>

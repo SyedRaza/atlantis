@@ -1,0 +1,39 @@
+<%= quick_search("show", ["note-type", "posted-by"]) %>
+
+
+<% if @vteam.opportunities.present? %>
+
+  <h2>Opportunities</h2>
+  <div class="opportunity_list_detail" >
+
+    <% @vteam.opportunities.each do |os| %>
+      <%= render :partial => 'opportunities/show_compact',
+        :locals=>{:opportunities=>os}  %>
+
+
+    <% end %>
+  </div>
+
+<% end %>
+
+
+
+<%  if @vteam.lead.present? %>
+
+  <h2>Contacts</h2>
+  <%= render :partial => 'contacts/show_compact',
+    :locals => { :contact => @vteam.lead.contact }  %>
+
+
+<%  end %>
+
+
+
+<% if @vteam.lead.company.present? %>
+
+  <h2>Company</h2>
+  <%= render :partial => 'companies/show_compact',
+    :locals => { :company => @vteam.lead.company }  %>
+
+<% end %>
+<%= show_signature(@vteam) %>

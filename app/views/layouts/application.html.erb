@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title> 
+  <%= render :partial=>'/layouts/css' %>
+  <%= yield :css %>
+  <%= csrf_meta_tag  %>
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <p id="flash_notice" class="notice"></p>
+  
+  <header>
+    <div class="container" style="position: relative;">
+        <a id="logo" href="/"></a>
+        <hgroup id="app-status">
+          <%= render :partial=>'layouts/user_status' %>
+        </hgroup>
+        <nav id="main-tabs">
+          <%= render_menu( :application_menu, {:ul_class=>'tabs',:li_class=>'', :current_class=>'current', :link_class=>''} ) if user_signed_in?  %>
+          <%#= render 'layouts/tabs' %>
+        </nav>
+    </div>
+    <hgroup id="menu-strip">
+      <div class="container">
+        <nav class="panes">
+          <%#= render 'layouts/tabpanes' %>
+          <%= render_menu( :application_menu, {:ul_class=>'',:li_class=>'', :current_class=>'current', :link_class=>''}, :divs, 2 ) if user_signed_in?  %>
+        </nav>
+      </div>
+    </hgroup><!-- end of menu strip -->
+  </header><!-- end of header -->
+  <section class="main">
+    <div class="container">
+      <aside id="left-bar"><%= yield :sidebar %></aside>
+      <section class="content">
+        <article>
+          <header>
+            <%= yield :header %>
+          </header>
+          <%= yield %>
+        </article>
+      </section>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <%=render :partial=>'layouts/footer'%>
+    </div>
+  </footer>
+
+  <%= render :partial=>'/layouts/js' %>
+  <%= yield :js %>
+
+</body>
+</html>

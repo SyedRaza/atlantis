@@ -1,0 +1,25 @@
+<%= simple_form_for(@testing, :html => {:multipart => true}) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="inputs">
+      <%= f.input :title %>
+    </div>
+
+    <div class="inputs">
+      <%= f.simple_fields_for :xdocs do |x| %>
+          <% if x.object.new_record? %>
+              <div class="inputs">
+                <%= x.input :attachment, :as=>:file %>
+                <%= x.input :title, :as=>:string %>
+                <%= x.input :description, :as=>:text %>
+                <%= x.input :type, :as=>:attachment_type %>
+              </div>
+          <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

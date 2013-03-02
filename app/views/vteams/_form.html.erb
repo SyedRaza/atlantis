@@ -1,0 +1,36 @@
+<%= simple_form_for(@vteam, :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name, :input_html => {} %>
+    <%= f.association :vteam_status %>
+    <%= f.input :start_date, :as => :string, :input_html => {:class=>"datepicker"} %>
+    <%= f.association :lead %>
+    <%= f.input :dev_manager, :input_html => {} %>
+    <%= f.input :working_hours, :input_html => {} %>
+    <%= f.association :dev_center %>
+    <%= f.association :billing_mode %>
+    <%= f.input :approved_on, :as => :string, :input_html => {:class=>"datepicker"} %>
+    <%= f.association :flag %>
+    <%= f.input :developers, :input_html=>{:rows=>7, :cols=>70} %>
+    <%= f.input :intent_to_start,:input_html=>{:rows=>7, :cols=>70} %>
+    <%= f.input :startup_advice,:input_html=>{:rows=>7, :cols=>70} %>
+    <%= f.input :technologies,:input_html=>{:rows=>7, :cols=>70} %>
+    <%= f.input :special_note,:input_html=>{:rows=>7, :cols=>70} %>
+    <%= f.input :key_dates,:input_html=>{:rows=>7, :cols=>70} %>
+  <%#= f.input :updated_by_client, :label=>"Update to Client" %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, :class => 'button big'%>
+    <input type="submit" value="Save & Create Opportunity" name="commit" input_html="{}" id="vteam_opportunity_submit" class="button button big"></input>
+    <input type="hidden" id="query" name="opportunity"></input>
+    <span style="vertical-align: bottom">or</span>
+    <% if @vteam.new_record? %>
+      <%= link_to 'Cancel', vteams_path, :class=>'big' %>
+    <% else %>
+      <%= link_to 'Cancel', vteam_path(@vteam), :class=>'big' %>
+    <% end %>
+  </div>
+
+<% end %>

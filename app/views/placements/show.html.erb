@@ -1,0 +1,39 @@
+<% content_for :css do %>
+    <%= theme_stylesheet_link_tag "placements/show" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<% content_for :js do %>
+    <%= javascript_include_tag 'notes/global' %>
+    <%= javascript_include_tag "placements/show" %>
+<% end %>
+
+<% content_for :header do %>
+    <h1><%= "Placement record of #{l @placement.date_effective}" %></h1>
+    <%= link_to 'Close', placements_path, :class=>'button big right' %>
+    <%= link_to 'Edit', edit_placement_path(@placement), :class=>'button big right' %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial=>'show_sidebar' %>
+<% end %>
+<%= show_for @placement do |s| %>
+
+
+    <%= s.attribute :available_resources, :escape=>true, :label => "Available Resource" %>
+    <%= s.attribute :freeing_up_resources, :label => "Freeing Up From Vteams" %>
+    <%= s.attribute :reserved_resources, :label => "Reserved" %>
+    <%= s.attribute :summary, :label => "Summary" %>
+
+<% end %>
+
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <h2 style="float:left;">Notes</h2>
+  <%= if can?(:create, Note) then
+          render_note_type_menu('Add New Note', placement_path(@placement))
+      end %>
+</div>
+<br class="clear"/>
+<div class="notes-container">
+</div>

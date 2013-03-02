@@ -1,0 +1,51 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag "opportunities/show" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<% content_for :js do %>
+    <%= javascript_include_tag 'notes/global' %>
+    <%= javascript_include_tag "opportunities/show" %>
+    <%= javascript_include_tag "jquery.collapsorz_1.1" %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => "show_sidebar" %>
+<% end %>
+
+<% content_for :header do %>
+    <h1><%= @opportunity.title %></h1>
+    <%= link_to 'Close', opportunities_path, :class=>'button big right' %>
+    <%= link_to 'Edit', edit_opportunity_path(@opportunity), :class=>'button big right' %>
+<% end %>
+
+<%= show_for @opportunity do |o| %>
+    <%= o.attribute :name, :in=>:opportunity_type %>
+    <%= o.attribute :name, :in=>:opportunity_status %>
+    <%= o.attribute :created_effective %>
+    <%= o.attribute :seats %>
+    <%= o.attribute :experience %>
+    <% if o.object.skill_area.present? %>
+        <dl class="wrapper opportunity_skill_area">
+          <dt class="label">Skill area</dt>
+          <dd class="content"><%= simple_format(o.object.skill_area) %></dd>
+        </dl>
+    <% end %>
+    <% if o.object.note.present? %>
+        <dl class="wrapper opportunity_note">
+          <dt class="label">Note</dt>
+          <dd class="content"><%= simple_format(o.object.note) %></dd>
+        </dl>
+    <% end %>
+<% end %>
+
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <h2 style="float:left;">Notes</h2>
+  <%= if can?(:create, Note) then
+          render_note_type_menu('Add New Note', opportunity_path(@opportunity))
+      end %>
+</div>
+<br class="clear"/>
+<div class="notes-container">
+</div>

@@ -1,0 +1,35 @@
+<h1>Listing resources</h1>
+
+<table>
+  <tr>
+    <th>Employee</th>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Resource role</th>
+    <th>Experience</th>
+    <th>Billing rate</th>
+    <th>Updated by</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resources.each do |resource| %>
+  <tr>
+    <td><%= resource.employee_id %></td>
+    <td><%= resource.name %></td>
+    <td><%= resource.number %></td>
+    <td><%= resource.resource_role_id %></td>
+    <td><%= resource.experience %></td>
+    <td><%= resource.billing_rate %></td>
+    <td><%= resource.updated_by %></td>
+    <td><%= link_to 'Show', resource %></td>
+    <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
+    <td><%= link_to 'Destroy', resource, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resource', new_resource_path %>

@@ -1,0 +1,30 @@
+<%= content_for :sidebar do %>
+    <%= render :partial => 'quicksearch' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>Notes</h1>
+    <%= link_to "<span class='ui-icon ui-icon-triangle-1-e'></span>Graphical Dashboard".html_safe, '/dashboard' , :class=>'right', :style=>'margin-right:95px;' %>
+<% end %>
+
+<%= content_for :js do %>
+    <%= javascript_include_tag "dashboard/notes" %>
+    <%= javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+    <%= stylesheet_link_tag "dashboard/index" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+    <%= theme_stylesheet_link_tag 'dashboard/notes' %>
+<% end %>
+
+<div id="notes_container" class="sidetabs-container">
+  <div id="notes_selector" class="sidetabs-tabs">
+    <%= side_tabs_for_periods :notes, ['Last 6 Days', 'This Week', 'This Month', 'This Year', 'Archives'] %>
+  </div>
+  <div id="notes_pane" class="sidetabs-pane">
+    <div class="notes-container">
+    </div>
+  </div>
+</div>
+

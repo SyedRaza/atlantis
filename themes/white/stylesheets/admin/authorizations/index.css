@@ -1,0 +1,68 @@
+.data-table td.odd {
+    background-color: #EFEFEF;
+}
+
+.data-table td.even {
+    background-color: #FFF;
+}
+
+.data-table td div.action {
+    display: inline-block;
+    width: 45px;
+    text-align: center;
+}
+
+.data-table td div.space {
+    display: inline-block;
+    width: 20px;
+}
+
+.data-table td {
+    border-bottom: #E5E5E5 solid 1px;
+    border-right: #E5E5E5 solid 1px;
+}
+
+.data-table td.highlight {
+    background-color: #EEE;
+}
+
+aside#left-bar {
+    width: 10px;
+}
+
+section.main > article {
+    margin-left: 10px;
+    border-left: none;
+    width: 100%;
+}
+
+.data-table {
+    font-size: 0.9em;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+    border: 1px solid #E4E4E4;
+}
+
+.data-table td {
+    padding: 2px 5px;
+    margin: 0;
+}
+
+.data-table tr.odd {
+    background-color: #EEE;
+}
+
+.data-table tr.even {
+    background-color: #FFF;
+}
+
+.data-table h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.data-table th {
+    border-bottom: #AAA solid 1px;
+}

@@ -1,0 +1,16 @@
+<div class="xdoc-form bottom-border">
+  <%= simple_form_for(@lead, :html => {:multipart => true}) do |f| %>
+    <%= f.simple_fields_for :xdocs do |x| %>
+      <% if x.object.new_record? %>
+        <div class="inputs">
+          <%= x.input :type, :as=>:attachment_type %>
+          <%= x.input :description, :as=>:text, :input_html=>{:rows=>3, :cols=>50} %>
+          <%= x.input :attachment, :as=>:file %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= f.button :submit, 'Save XDoc', :class=>'left-indent button big' %> or
+    <%= link_to "Cancel", '#', :onclick=>"$('.xdoc-form').hide('blind'); return false;" %>
+  <% end %>
+  <br/>
+</div>

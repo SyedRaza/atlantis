@@ -1,0 +1,10 @@
+<%  unless @resource_vteam_count > 0%>
+  $('#new-xdoc-cancel').click();
+  $('#dynamic-ajax-container').html("<%= escape_javascript(( render :partial => 'list')) %>");
+  makeSameWidth( 'ul.list-headers', 'ul.list-row');
+
+  $('.pagination a').attr('data-remote', 'true');
+  $(".close").hide();
+<%else%>
+  $('div#newxdoc').hide().html("<span id='resource-exist-message' ><b><%=@resource_vteam_allocation.resource.title%></b>  already working for this Vteam as an <b><%=@resource_vteam_allocation.resource_type%></b>    </span> <br /><%= escape_javascript(( render :partial => 'form')) %>").show();
+<%end%>

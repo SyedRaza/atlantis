@@ -1,0 +1,2 @@
+module ResourceVteamAllocationsHelper
+end

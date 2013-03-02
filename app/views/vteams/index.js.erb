@@ -1,0 +1,7 @@
+$('#vteams').html("<%=escape_javascript(render :partial => 'list') %>");
+makeSameWidth( 'ul.list-headers', 'ul.list-row');
+$('.pagination a').attr('data-remote', 'true');
+<% unless params[:side_tab_period] %>
+$('div.sidetabs-tabs ul').find('[class="selected"]').removeClass('selected');
+<% end %>
+

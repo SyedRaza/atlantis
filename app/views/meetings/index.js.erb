@@ -1,0 +1,17 @@
+$('#meetings').html("<%=escape_javascript(render :partial => 'list') %>");
+makeSameWidth( 'ul.list-headers', 'ul.list-row');
+$('.pagination a').attr('data-remote', 'true');
+$('dl.options').setId();
+<% if params[:side_tab_period].nil? %>
+  $("a.selected").removeClass("selected");
+<%end%>
+<% if params[:search].nil? %>
+  $("#search_date_of_meeting_greater_than_or_equal_to").val("");
+  $("#search_date_of_meeting_less_than_or_equal_to").val("");
+<%end%>
+
+$("#meetings_stats").html("<h2>Meetings Stats</h2>Total meeting time&nbsp;: <%= print_time(@total_meetings_time)%> <br/>Total employees time&nbsp;: <%= print_time(@total_employees_meetings_time)%> ");
+
+<% unless params[:side_tab_period] %>
+  $('div.sidetabs-tabs ul').find('[class="selected"]').removeClass('selected');
+<% end %>

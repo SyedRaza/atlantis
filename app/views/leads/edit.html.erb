@@ -1,0 +1,13 @@
+<%= content_for :css do %>
+  <%= stylesheet_link_tag 'leads/new' %>
+<% end %>
+<%= content_for :js do %>
+  <%= javascript_include_tag 'leads/new' %>
+<% end %>
+<%= content_for :header do %>
+  <h1>Editing Lead</h1>
+  
+<% end %>
+
+<div id="errors"></div>
+<%= render 'form' %>

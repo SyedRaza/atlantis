@@ -1,0 +1,44 @@
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag "admin/index" %>
+    <%= stylesheet_link_tag "users/new" %>
+<% end %>
+<%= content_for :sidebar do %>
+    <%= render :partial=>'admin/sidebar' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>All Users</h1>
+<% end %>
+<% if @users.length == 0 %>
+    <%= "No Users Yet" %>
+<% else %>
+    <div class="active-scaffold-header">
+      <%= link_to "Create New", new_admin_user_url %>
+    </div>
+    <div class="active-scaffold">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Last Access</th>
+          <th>Last Login</th>
+        </tr>
+        </thead>
+        <tbody class="records">
+        <% @users.each do |user| %>
+            <tr class="record">
+              <td><%= link_to user.name, edit_admin_user_url(user) %></td>
+              <td><%= user.email %></td>
+              <td><%= l user.current_sign_in_at unless user.current_sign_in_at.nil? %></td>
+              <td><%= l user.last_sign_in_at unless user.last_sign_in_at.nil? %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+<% end %>
+<div class="active-scaffold-found">
+  <span class="active-scaffold-records"><%= User.all.length %> Found</span>
+</div>
+<%= will_paginate @users %>

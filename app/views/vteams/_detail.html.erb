@@ -1,0 +1,37 @@
+<div id="<%= @vteam.id %>" class="vteam-detail">
+
+  <div id="close">
+    <a class="thick-view-close" id="<%= @vteam.id %>" href=''><img src='/themes/white/images/icons/cross-active.png'></img></a>
+  </div>
+  <div id="vteam-left">
+    <div id="age">
+      <%= @vteam.age %>
+    </div>
+    <div id="status">
+      <%= @vteam.vteam_status.status %>
+    </div>
+  </div>
+  <div id="vteam-right">
+    <div id="name-manager">
+      <h3><%= link_to @vteam.name, vteam_url(@vteam) %></h3>
+      <h5><%= @vteam.dev_manager %></h5>
+    </div>
+    <div id="dev-tech">
+      <div id="upper"><b>Developers:</b> <%= simple_format @vteam.developers %></div>
+      <div id="lower"><b>Technologies:</b> <%= simple_format @vteam.technologies %></div>
+    </div>
+  </div>
+  <div id="vteam-thick-view-options" class="thick-view-options">
+    <%= options_menu do |m| %>
+        <%= m.item link_to 'Show', vteam_path(@vteam) %>
+        <%= m.item link_to 'Edit', edit_vteam_path(@vteam) %>
+        <%= m.item link_to 'New Note', "vteams/#{@vteam.id}/notes/new", :class=>"display-new-note", :id=>@vteam.id %>
+        <%= m.item link_to 'Create Opportunity', new_vteam_opportunity_path(@vteam) %>
+    <% end %>
+  </div>
+  <div class="notes-heading">
+    <h3>Notes</h3>
+  </div>
+  <%= render :partial => 'shared/notes_list', :locals => {:notes=>@vteam.notes[0..2]} %>
+
+</div>

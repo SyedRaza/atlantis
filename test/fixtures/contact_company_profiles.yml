@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contact_id: 1
+  company_id: 1
+  active_date: 2010-12-23
+  expire_date: 2010-12-23
+  active: false
+
+two:
+  contact_id: 1
+  company_id: 1
+  active_date: 2010-12-23
+  expire_date: 2010-12-23
+  active: false

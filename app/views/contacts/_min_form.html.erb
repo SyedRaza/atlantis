@@ -1,0 +1,33 @@
+<%= simple_form_for @contact,:url=>{:controller=>"leads"} do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+      <ul>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div style="display: inline-block; float: left; margin-right: 20px;">
+    <%#= f.input :title, :input_html=>{:size=>'15'} %>
+    <%= f.input :first_name, :input_html=>{:size=>'20',:class=>'fix'} %>
+    <%= f.input :last_name, :input_html=>{:size=>'20',:class=>'fix'} %>
+    <%= f.simple_fields_for :phones do |f| %>
+      <%= f.association :phone_type, :label=>"Phone Type", :input_html=>{:class=>'auto fix'} %>
+      <%= f.input :phone_number, :label=>"Phone Number", :input_html=>{:size=>'15',:class=>'fix'} %>
+    <% end %>
+    <%= f.simple_fields_for :emails do |f| %>
+      <%= f.association :email_type, :label=>"Email Type", :input_html=>{:class=>'auto fix'} %>
+      <%= f.input :email, :label=>"Email", :input_html=>{:size=>'15',:class=>'fix'} %>
+    <%end%>
+    <%= f.simple_fields_for :messengers do |f| %>
+      <%= f.association :messenger_type, :label=>"Messenger Type", :input_html=>{:class=>'auto fix'} %>
+      <%= f.association :messenger_service, :label=>"Messenger Service", :input_html=>{:class=>'auto fix'} %><br/>
+      <%= f.input :title, :label=>"Messenger ID", :input_html=>{:size=>'15',:class=>'fix'} %>
+    <%end%>
+    <div class="actions">
+      <%= f.button :submit, :class=>'button big' %>
+    </div>
+  </div>
+<% end %>

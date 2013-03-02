@@ -1,0 +1,11 @@
+4,11 Incorporated,11 Incorporated,19
+6,Beeline Communications,Beeline Communications,30
+7,Complete Interactive,Complete Interactive,9
+8,Front Desk Networks,Front Desk Networks,16
+10,Techno Gurus,Techno Gurus,12
+85,LasVegas.Net,LasVegas.net,24
+154,Complete Interactive,Complete Interactive,9
+182,Second Platform Web Design,Second Platform Web Design,60
+241,Executive One Alaska,Executive One Alaska,36
+251,Front Desk Networks,Front Desk Networks,16
+290,Wappz,WAPPZ,64

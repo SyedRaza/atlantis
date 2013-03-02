@@ -1,0 +1,22 @@
+<%= content_for :js do %>
+    <%= javascript_include_tag 'dashboard/index' %>
+<% end %>
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag 'dashboard/index' %>
+<% end %>
+<%= content_for :sidebar do %>
+    <%= render_widget 'date_range' %>
+<% end %>
+<%= content_for :header do %>
+    <%= link_to "<span class='ui-icon ui-icon-triangle-1-e'></span>Notes Dashboard".html_safe, '/dashboard/notes' , :class=>'right'%>
+<% end %>
+<div id='protlet-container'>
+  <div class="column">
+    <%= render_widget 'daily_lead_count' %>
+    <%= render_widget 'monthly_lead_count' %>
+  </div>
+  <div class="column">
+    <%= render_widget 'daily_team_count' %>
+    <%= render_widget 'monthly_team_count' %>
+  </div>
+</div>

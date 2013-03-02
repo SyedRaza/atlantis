@@ -1,0 +1,27 @@
+
+<%= show_for company do |l| %>
+  <dl class="wrapper">
+    <dt class="label"><span class="ui-icon ui-icon-battery-0">&nbsp;</span></dt>
+    <dd class="content"><%= link_to company.title, company_url( l.object ) %> </dd>
+  </dl>
+
+  <%#= l.attribute :title, :label=>"<span class='ui-icon ui-icon-battery-0'>&nbsp;</span>".html_safe %>
+  <% if l.object.phones.present? %>
+    <%= l.association :phones, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-contact'>&nbsp;</span>".html_safe %>
+  <% end %>
+
+  <% if l.object.emails.present? %>
+    <%= l.association :emails, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-mail-closed'>&nbsp;</span>".html_safe %>
+  <% end %>
+
+  <% if l.object.websites.present? %>
+    <%= l.association :websites, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-link'>&nbsp;</span>".html_safe %>
+  <% end %>
+
+  <% if l.object.addresses.present? %>
+    <%= l.association :addresses, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-home'>&nbsp;</span>".html_safe %>
+  <% end %>
+
+  
+<% end %>
+

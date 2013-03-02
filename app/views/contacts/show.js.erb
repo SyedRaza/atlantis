@@ -1,0 +1,18 @@
+<div id="pic">
+<%=raw image_tag @contact.pic.url(:thumb) %>
+</div>
+        <%= show_for @contact do |c| %>
+        <%= c.attribute :first_name %>
+        <%= c.attribute :last_name %>
+        <%= c.association :contact_status %>
+        <%= c.association :contact_type %>
+        <%= c.association :contact_directory %>
+        <%= c.association :phones,:to_sentence => true %>
+        <%= c.association :emails,:to_sentence => true %>
+        <%= c.association :websites,:to_sentence => true %>
+        <%= c.association :messengers,:to_sentence => true %>
+        <%= c.attribute :additional_info %>
+        <%= c.association :addresses,:to_sentence => true %>
+        <%= c.association :companies,:to_sentence => true %>
+        <%= c.attribute :current_company %>
+        <% end %>

@@ -1,0 +1,104 @@
+/* 
+    Document   : new
+    Created on : Mar 16, 2011, 11:06:42 AM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.auto-column.small {
+    height: 14px;
+    font-size: 11px;
+    color: #555;
+}
+
+.ui-menu {
+    width: auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ui-menu .ui-menu-item a {
+    line-height: 17px;
+    padding: 0 0 5px;
+}
+
+.ui-menu .ui-menu-item {
+    border-top: #FFF solid 1px;
+    border-bottom: #CCC solid 1px;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    width: auto;
+}
+/*.margin{
+    margin-left: 15px;
+}
+.padding {
+    padding-left: 15px;
+}*/
+.simple_form input.button {
+    /*    background-image: url("/images/button_back.jpg");*/
+    display: inline-block;
+    /*    background-repeat: repeat-x;*/
+    /*    opacity: 0.8;*/
+    background-color: #d4d4d4;
+    padding: 0px 10px;
+    height: 25px;
+
+    /*    -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;*/
+
+    border: #AAA solid 1px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.simple_form select{
+    height: 20px;
+    padding: 0px;
+    width: 207px;
+}
+.simple_form input.button:hover{
+    background-color: #E5E5E5;
+    opacity: 1;
+    text-decoration: none;
+    color: #005CB8;
+}
+.simple_form input{
+    height: 18px;
+    width: 200px;
+}
+.actions input{
+    width: 100px;
+}
+
+/*#lead-form {
+    display: block;
+    float: left;
+    width: 470px;
+}*/
+
+
+/*#new_contact{
+    border: 1px solid #777;
+}*/
+
+
+#heading {
+    margin-bottom: 20px;
+    height: 25px;
+}
+/*#ui-dialog-title-new_company_dialog{
+    margin-top: 9px;
+}*/

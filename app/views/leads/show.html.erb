@@ -1,0 +1,65 @@
+<% content_for :header do %>
+
+    <% if @lead.contact.present? %>
+        <h1><%= "#{@lead.contact.complete_name}" %></h1>
+    <% end %>
+    <%= link_to 'Close', leads_path, :class=>'button big right' %>
+    <% if can? :edit, @lead %>
+        <%= link_to 'Edit', edit_lead_path(@lead), :class=>'button big right' %>
+    <% end %>
+    <% if can? :create, Vteam %>
+        <%= link_to "Create Vteam", {:controller=>:vteams, :action=>:new, :by=>:lead, :parent_id=>@lead.id}, :class=>'button big right' %>
+    <% end %>
+    <% if can? :create, Opportunity %>
+        <%= link_to "Create Opportunity", new_lead_opportunity_path(@lead), :class=>'button big right' %><br/>
+    <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial=>'show_sidebar' %>
+<% end %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'leads/show' %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<% content_for :js do %>
+    <%= javascript_include_tag 'notes/global' %>
+    <%= javascript_include_tag 'leads/show' %>
+    <%= javascript_include_tag "jquery.collapsorz_1.1" %>
+<% end %>
+
+<%= show_for @lead do |l| %>
+    <%= l.attribute :lead_status if l.object.lead_status.present? -%>
+    <%= l.attribute :lead_type if l.object.lead_type.present? -%>
+    <%= l.attribute :lead_source if l.object.lead_source.present? -%>
+    <% if l.object.primary_skills.present? %>
+        <dl class="wrapper lead_primary_skills">
+          <dt class="label">Primary Skills</dt>
+          <dd class="content"><%= simple_format(l.object.primary_skills) %></dd>
+        </dl>
+    <% end %>
+    <% if l.object.situation.present? %>
+        <dl class="wrapper lead_situation">
+          <dt class="label">Situation</dt>
+          <dd class="content"><%= simple_format(l.object.situation) %></dd>
+        </dl>
+    <% end %>
+    <% if l.object.original_email.present? %>
+        <dl class="wrapper original_email">
+          <dt class="label">Original Email</dt>
+          <dd class="content"><%= simple_format(l.object.original_email) %></dd>
+        </dl>
+    <% end %>
+<% end %>
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <h2 style="float:left;">Notes</h2>
+  <%= if can?(:create, Note) then
+          render_note_type_menu('Add New Note', lead_path(@lead))
+      end %>
+</div>
+<br class="clear"/>
+<div class="notes-container">
+
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  opportunity_type_id: 1
+  opportunity_status_id: 1
+  created_effective: 2011-01-13
+  seats: MyString
+  experience: MyString
+  skill_area: MyText
+  note: MyText
+
+two:
+  title: MyString
+  opportunity_type_id: 1
+  opportunity_status_id: 1
+  created_effective: 2011-01-13
+  seats: MyString
+  experience: MyString
+  skill_area: MyText
+  note: MyText

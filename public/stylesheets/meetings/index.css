@@ -1,0 +1,129 @@
+#meeting_selector {
+    width: 80px;
+}
+
+.sidetabs-container .sidetabs-pane {
+    width: 670px;
+    overflow: hidden;
+}
+
+#filter-type > label {
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+
+#meeting_search label {
+    display: none;
+
+}
+
+#filter-type {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+/*--------------------- new listing style -------------------------*/
+
+.meetings_new_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.meeting_new .type.dm.meeting {
+    background-color: #DDDF37;
+}
+
+.meeting_new .type.daily.ops {
+    background-color: #98FB98;
+}
+
+.meeting_new .type.daily.operations {
+    background-color: #98FB98;
+}
+
+.meeting_new {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.meeting_new:hover  {
+    background-color: seashell;
+}
+.meeting_new:hover .actions{
+    display:block;
+}
+
+.meeting_new div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.meeting_new .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.meeting_new .name {
+    font-size: 12px;
+}
+
+.meeting_new .contact-detail {
+
+}
+
+.meeting_new .type > strong {
+    font-size: 10px;
+}
+
+.meeting_new .small {
+    font-size: 11px;
+    line-height: 19px;
+}
+
+.meeting_new .gray {
+    color: #696969;
+}
+
+.meeting_new .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.meeting_new .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.meeting_new .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+
+/*--------------------- new listing style -------------------------*/

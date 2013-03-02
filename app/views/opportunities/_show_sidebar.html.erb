@@ -1,0 +1,57 @@
+<%= quick_search("show", ["note-type", "posted-by"]) %>
+
+<h2><%= @opportunity.source_type %></h2>
+
+
+<%if @opportunity.source_type == "Lead" %>
+
+  
+  <%= render :partial => 'leads/show_compact',
+    :locals=>{:leads=>@opportunity.source} %>
+  
+
+  <% if @opportunity.source.contact.present? %>
+    <h2>Contact</h2>
+    <%= render :partial => 'contacts/show_compact',
+      :locals=>{:contact=>@opportunity.source.contact} %>
+  
+  <% end %>
+
+
+  <% if @opportunity.source.company.present? %>
+    <h2>Company</h2>
+    <%= render :partial => 'companies/show_compact',
+      :locals=>{:company=>@opportunity.source.company} %>
+
+    
+  <% end %>
+
+
+<% elsif @opportunity.source_type == "Vteam" %>
+
+  <%= render :partial => 'vteams/show_compact',
+    :locals=>{:vteams=>@opportunity.source} %>
+  
+
+
+  <% if @opportunity.source.lead.present? %>
+    <% if @opportunity.source.lead.contact.present? %>
+      <h2>Contact</h2>
+      <%= render :partial => 'contacts/show_compact',
+        :locals=>{:contact=>@opportunity.source.lead.contact} %>
+    <% end %>
+
+
+
+    <% if @opportunity.source.lead.company.present? %>
+
+      <h2>Company</h2>
+      <%= render :partial => 'companies/show_compact',
+        :locals=>{:company=>@opportunity.source.lead.company} %>
+
+    <%end%>
+  <% end %>
+
+<% end %>
+
+<%= show_signature(@opportunity) %>

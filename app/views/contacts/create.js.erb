@@ -1,0 +1,10 @@
+<% if (@contact.errors.any?) %>
+alert('<%= escape_javascript( @contact.errors.full_messages.to_s ) %>');
+<% else %>
+    $('#new_contact_dialog').dialog('close');
+    $('#lead_contact').val("<%= "#{@contact.first_name} #{@contact.last_name}" %>");
+    var a = $('#lead_contact').parent("div").append("<a id='<%=@contact.id%>' href='/contacts/<%=@contact.id%>/edit'>Edit</a>");
+    $('#lead_contact_id').val(<%= @contact.id %>);
+    <%= if @contact.companies.present? %>    
+    $('#lead_company').focus();
+<% end %>

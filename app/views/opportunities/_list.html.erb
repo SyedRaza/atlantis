@@ -1,0 +1,34 @@
+<div class="total_records">
+  <span><%= raw page_entries_info @opportunities %></span>
+</div>
+
+<ul id="opportunities_new_list" class="opportunities_new_list">
+  <% @opportunities.each do |l| %>
+    <li id="list-row-<%= l.id %>" class="opportunity_new">
+      <div class="type <%= l.opportunity_status.to_s.underscore %>">
+        <%= truncate("#{l.opportunity_status}", :length => 12) %>
+        <br/>
+        <span class="small gray age"><%= l.age %></span>
+      </div>
+      <div class="name">
+        <%= link_to "#{l.title}" , opportunity_url(l) %><%= " - "%><%= link_to l.source.title, "#" %>
+      </div>
+      <br/>
+
+      <div class="contact-detail small gray">
+        <span class="gray small set_below_seat"><%= "Seats: #{l.seats}"%>
+          <%= "Experience: #{l.experience}" %></span>
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', opportunity_path(l.id)) %>
+          <%= o.item link_to('Edit', edit_opportunity_path(l.id)) %>
+          <%= o.item link_to('New Note', "/opportunities/#{l.id}/notes/new", :class=>"display-new-note", :id=>l.id) %>
+        <% end %>
+      </div>
+    </li>
+    <li id="newxdoc-<%= l.id %>" class="newdoc_li"></li>
+  <% end %>
+</ul>
+<%= processed_pagination(@opportunities) %>

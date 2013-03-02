@@ -1,0 +1,18 @@
+.simple_form input.ui-advance-autocomplete {
+    background-image: url("../images/auto_complete_hint.png");
+    background-position:top right;
+    background-repeat: no-repeat;
+}
+.simple_form input[type="file"]{
+    width:30px;
+}
+.simple_form input.button {
+    background-color: #D4D4D4;
+    border: 1px solid #AAAAAA;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    padding: 0 10px;
+    text-decoration: none;
+}

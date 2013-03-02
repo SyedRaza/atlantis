@@ -1,0 +1,51 @@
+<div class="notes-container">
+  <div class="new-note">
+  </div>
+  <% unless @show_record_count.nil? %>
+      <div class="total-records">
+        <%= raw page_entries_info notes, :entry_name => 'Notes' %>
+        <% if  request.path.eql?("/notes") %>
+            <%= descriptive_title %>
+        <% end %>
+      </div>
+  <% end %>
+  <ul class="notes-list">
+    <% unless notes.blank? %>
+        <% notes.each do |note| %>
+            <li id="note_<%= note.id %>" class="note">
+              <dl>
+                <dt>
+                  <em class="cat"><%= note.parent.class.to_s.humanize %></em>
+                  <% if note.parent.class.to_s.humanize =="Opportunity" %>
+                      <%= link_to awesome_truncate(("#{note.parent.note_title}(#{note.parent.source_type.constantize.find(note.parent.source_id).title})"), 25), "/#{note.parent.class.to_s.pluralize.underscore}/#{note.parent.id}" %>
+                  <% else %>
+                      <%= link_to awesome_truncate(note.parent.note_title, 25), "/#{note.parent.class.to_s.pluralize.underscore}/#{note.parent.id}" %>
+                  <% end %>
+                  <span style="float:right;">
+                <span class="type"><%= note.type.title %></span>
+                <em>By:</em>
+                <span class="by"><%= note.user.name %></span>
+                <em>On</em>
+                <span><%= l note.updated_at %></span>
+              </span>
+                </dt>
+                <dd>
+                  <%= render :partial=>"notes/#{note.detail_type.underscore}_show.html.erb", :locals=>{:detail=>note.detail} %>
+                  <%
+                     links = []
+                     links <<(link_to "Edit", "/#{note.parent_type.downcase.pluralize}/#{note.parent_id}/notes/#{note.id}/edit", :class=>'edit') if can? :edit, note
+                     links << (link_to "Delete", "/#{note.parent_type.downcase.pluralize}/#{note.parent_id}/notes/#{note.id}", :method=>:delete, :confirm=>"Are you sure you want to delete this Note?", :remote=>true, :class=>'delete') if can? :delete, note
+                  %>
+                  <span class="options"><%= links.join(' | ').html_safe %></span>
+                </dd>
+              </dl>
+            </li>
+        <% end %>
+    <% end %>
+    <div class="notes-pagination">
+      <% unless @show_record_count.nil? %>
+          <%= processed_pagination(notes) %>
+      <% end %>
+    </div>
+  </ul>
+</div>

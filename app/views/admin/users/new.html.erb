@@ -1,0 +1,13 @@
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag "admin/index" %>
+    <%= stylesheet_link_tag "users/new" %>
+<% end %>
+<%= content_for :sidebar do %>
+    <%= render :partial=>'admin/sidebar' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>Create New User</h1>
+<% end %>
+
+<%= render "form" %>

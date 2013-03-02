@@ -1,0 +1,3 @@
+$('ul.notes-list').prepend("<%= escape_javascript( render :partial=>'note_list_item', :locals=>{:x=>@note} ) %>").show('blind');
+        $('#new-note-cancel').trigger('click');
+

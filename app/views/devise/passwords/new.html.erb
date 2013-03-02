@@ -1,0 +1,15 @@
+<%= content_for :header do %>
+    <h1>Forgot your password?</h1>
+<% end %>
+<%= content_for :css do  %>
+  <%= theme_stylesheet_link_tag 'devise/login' %>
+  
+<% end %>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.attribute :email, :label => false, :hint => "Email Address", :input_html=>{:size=>20} %>
+  <%= f.button :submit, "Retrieve Password", :class=>"button big" %>
+
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

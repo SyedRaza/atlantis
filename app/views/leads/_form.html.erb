@@ -1,0 +1,77 @@
+<%= simple_form_for @lead do |f| %>
+    <div id="lead-form">
+      <div id="post_errors" style="display: none;"></div>
+      <h2>General Information</h2>
+
+      <div class="input string required">
+        <label for="lead_contact" class="string required">
+          <abbr title="required">*</abbr> Contact
+        </label>
+        <input type="text" size="25"
+               <% unless (@lead.contact.first_name.blank?) %>
+               value="<%= "#{@lead.contact.first_name} #{@lead.contact.last_name} " %>"
+               <% else %>
+               value=""
+               <% end %>
+
+               required="required" name="" id="lead_contact" class="string required ui-advance-autocomplete ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/>
+        <% unless (@lead.contact.first_name.blank?) %>
+            <a id='toggle-edit-contact' href='#'>Edit</a>
+        <% end %>
+      </div>
+
+      <%= f.input :contact_id, :as=>:hidden %>
+      <div class="input string optionCompanyList">
+        <label for="lead_company" class="string required" id="contact-companies">
+          <abbr title="required"></abbr>Company
+        </label>
+        <%= select_tag ("lead_contact_companies") %>
+        <span class="hint">Companies associated with the contact.</span>
+      </div>
+
+
+      <div class="input string required">
+
+        <label for="lead_company" class="string required">
+          <abbr title="required"></abbr>Company
+        </label>
+        <input type="text" size="25"
+               <% unless (@lead.company.nil?) %>
+               value="<%= @lead.company.title %>"
+               <% end %> name="" id="lead_company" class="string ui-advance-autocomplete ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"/>
+        <% if (@lead.company_id?) %>
+            <a id='toggle-edit-company' href='#'>Edit</a>
+        <% end %>
+      </div>
+
+      <%= f.input :company_id, :as=>:hidden %>
+
+
+      <%= f.association :lead_status, :allow_blank=>false, :wrapper_html=>{} %>
+      <%= f.association :lead_source, :allow_blank=>false, :wrapper_html=>{} %>
+      <%= f.association :lead_type, :allow_blank=>false %>
+
+      <h2>Technical Information</h2>
+      <%= f.input :primary_skills, :input_html=>{:rows=>7, :cols=>70} %>
+      <%= f.input :situation, :input_html=>{:rows=>7, :cols=>70} %>
+      <%= f.input :original_email, :input_html=>{:rows=>7, :cols=>70} %>
+
+      <%= render :partial => "min_contact_form", :locals=>{:f => f} %>
+      <%= render :partial => "min_company_form", :locals=>{:f => f} %>
+      <div class="actions">
+        <%= f.button :submit, :class => 'button big', :input_html=>{} %>
+        <input type="submit" value="Save & Create Opportunity" name="commit" input_html="{}" id="lead_opportunity_submit" class="button button big"></input>
+        <input type="hidden" id="query" name="opportunity"></input>
+        <span style="vertical-align: bottom">or</span>
+        <% if @lead.new_record? %>
+            <%= link_to 'Cancel', leads_path, :id=>"remove", :class=>'big' %>
+        <% else %>
+            <%= link_to 'Cancel', lead_url(@lead), :id=>"remove", :class=>'big' %>
+        <% end %>
+      </div>
+      <%= hidden_field_tag(:company_check, "") %>
+    </div>
+    <%#= render :partial => 'opportunities_form', :locals => {:f=>f} %>
+
+<% end %>
+<hr class="ver-gap"/>

@@ -1,0 +1,17 @@
+<h2><%= @company_data.title%></h2>
+
+<fieldset><legend>Emails</legend>
+  <% @company_data.emails.each do |email|%>
+  <%= email.email %> <br />
+  <% end %>
+</fieldset>
+<fieldset><legend>Websites</legend>
+  <% @company_data.websites.each do |website|%>
+    <%= website.url %><br/>
+  <% end %>
+</fieldset>
+<fieldset><legend>Phones</legend>
+  <% @company_data.phones.each do |phone|%>
+    <%= phone.phone_number %> <br/>
+  <% end %>
+</fieldset>

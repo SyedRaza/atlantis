@@ -1,0 +1,80 @@
+/*
+  Gray Color : #e1e1e1
+  Dark Blue :  #00a6ec
+*/
+
+root { 
+    display: block;
+}
+html{
+  height: 100%;
+  background-color: #e1e1e1;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #e1e1e1;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+section.main{
+  background-color: #FFFFFF;
+  display: inline-block;
+  margin-top: -10px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+aside#left-bar{
+  background-color: #d5f0fd;
+  border-right: 1px solid #88D5FE;
+  display: inline-block;
+  margin-right: 20px;
+  max-width: 180px;
+  min-width: 180px;
+  padding: 10px;
+  position: absolute;
+  top:-10px;
+  left: 0;
+  bottom: -20px;
+}
+
+section.content {
+  display: block;
+  margin-top: 10px;
+  min-height: 400px;
+}
+
+body > header {
+  display: block;
+  width: 100%;
+  height: 115px;
+  background-image: url("/images/header_back.jpg");
+  background-position: top;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: 1;
+}
+body > header #logo{
+  display: block;
+  background-image: url("/images/logo.jpg");
+  width: 115px;
+  height: 80px;
+  margin-left: 10px;
+  float: left;
+}
+body > footer{
+  background-color: #daf1fd;
+  min-height: 50px;
+  border-top: #8c8c8c dotted 1px;
+  display: block;
+  clear: both;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}

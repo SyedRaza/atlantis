@@ -1,0 +1,153 @@
+/* 
+    Document   : index
+    Created on : Jan 17, 2011, 2:40:53 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+#vteam_selector {
+    width: 80px;
+}
+
+.sidetabs-container .sidetabs-pane {
+    width: 87%;
+}
+
+#filter-type > label {
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+
+#filter-type {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/*--------------------- new listing style -------------------------*/
+
+.vteams_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.vteam .type.active {
+    background-color: #98FB98;
+}
+
+.vteam .type.all
+{
+    background-color: #00BFFF;
+}
+
+.vteam .type.comp {
+    background-color: #eaeaa0;
+}
+.vteam .type.inactive {
+    background-color: #DCDCDC;
+}
+
+.vteam .type.t.pause {
+    background-color: #CDF7C5;
+}
+
+.vteam {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.vteam:hover  {
+    background-color: seashell;
+}
+.vteam:hover .actions{
+    display:block;
+}
+
+.vteam div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.vteam .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.vteam .name {
+    font-size: 12px;
+}
+
+.vteam .contact-detail {
+
+}
+
+.vteam .type > strong {
+    font-size: 10px;
+}
+
+.vteam .small {
+    font-size: 11px;
+    line-height: 19px;;
+}
+
+.vteam .gray {
+    color: #696969;
+}
+
+.vteam .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.vteam .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.vteam .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+.ui-icon{
+    vertical-align: text-top;
+}
+div.small.gray a{
+    color: gray;
+}
+div.small.gray a:hover{
+    color: #00A6EC;
+}
+
+/*--------------------- new listing style -------------------------*/

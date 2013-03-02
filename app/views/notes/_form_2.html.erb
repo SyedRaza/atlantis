@@ -1,0 +1,16 @@
+<%= simple_form_for([@note.parent, @note], :remote=>true, :html=>{:multipart=>true, :id=>'new-note-form'}) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :note_type_id, :as=>:hidden %>
+    <%= f.input :parent_type, :as=>:hidden %>
+    <%= f.input :parent_id, :as=>:hidden %>
+
+    <% if @note.detail == nil %>
+        <%= raw render_note_type_menu('Select Note', '') %>
+    <% else %>
+        <%= f.input :detail_type, :as=>:hidden %>
+        <%= render(:partial=>"#{f.object.detail_type.underscore}_form", :locals=>{:f=>f}) %>
+        <%= f.button :submit, :class=>'button big' %>
+        <span style="vertical-align: bottom">or</span> <%= link_to "Cancel", "#", :id=>'new-note-cancel' %>
+    <% end %>
+<% end %>
+<br/>

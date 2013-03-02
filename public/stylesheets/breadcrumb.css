@@ -1,0 +1,40 @@
+#app-status{
+  display: block;
+  height: 20px;
+  float: right;
+  text-align: right;
+  margin-top: 15px;
+}
+#app-status,
+#app-status a{
+  font-size: 0.8em;
+  color: #FFF;
+}
+#app-status b{
+  font-size: 1em;
+}
+#breadcrumb{
+  display: block;
+  float: left;
+  height: 30px;
+  overflow: hidden;
+
+  color: #0494C8;
+  font-size: 11px;
+  font-style: normal;
+  font-family: sans-serif;
+}
+#breadcrumb div {
+  color: #0494C8;
+}
+#breadcrumb a{
+  color: #0E84A5;
+  text-decoration: none;
+}
+#breadcrumb a:hover{
+  text-decoration: underline;
+}
+#breadcrumb a.current{
+  color: #FFF;
+  text-decoration: none;
+}

@@ -1,0 +1,39 @@
+#pic {
+    border: #AAA solid 1px;
+    float: right;
+    padding: 3px;
+    background-color: #FFF;
+    margin-top: 5px;
+}
+
+article > div.contact {
+    width: 100%;
+}
+
+dl.contact_note > .content {
+    padding-right: 15px;
+}
+
+#note {
+    background-image: url("../../images/note_back1.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    height: 172px;
+    padding-left: 20px;
+    padding-right: 25px;
+    padding-top: 50px;
+    position: absolute;
+    right: 0;
+    width: 150px;
+}
+#contact_note{
+    width:160px;
+    height:125px;
+    line-height:20px;
+    vertical-align:top;
+    word-wrap:break-word;
+}
+aside#left-bar .label {
+    width: auto;
+}

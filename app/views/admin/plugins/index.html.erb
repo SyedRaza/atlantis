@@ -1,0 +1,32 @@
+<%= content_for :header do %>
+    <h1>Plugins</h1>
+<% end %>
+
+<%= content_for :sidebar do %>
+    <%= render 'admin/sidebar' %>
+<% end %>
+
+<% if @plugins.any? %>
+    <table class="data-table">
+      <% @plugins.each do |plugin| %>
+          <tr class="<%= cycle('odd', 'even') %>">
+            <td><h2><%= h plugin.name %></h2>
+              <%= content_tag('div', h(plugin.description), :class => 'description') unless plugin.description.blank? %>
+              <%= content_tag('div', link_to(h(plugin.url), plugin.url), :class => 'url') unless plugin.url.blank? %>
+            </td>
+            <td><%= plugin.author_url.blank? ? h(plugin.author) : link_to(h(plugin.author), plugin.author_url) %></td>
+            <td><%= h plugin.version %></td>
+            <td>
+              <% if  plugin.activated? %>
+                  <%= link_to("De-Activate", "/admin/plugins/deactivate_plugin/#{plugin.id}") %>
+              <% else %>
+                  <%= link_to("Activate", "/admin/plugins/activate_plugin/#{plugin.id}") %>
+              <% end %>
+            </td>
+            <td><%= link_to(l(:button_configure), :controller => 'settings', :action => 'plugin', :id => plugin.id) if plugin.configurable? %></td>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <p class="nodata">No Plugin found</p>
+<% end %>

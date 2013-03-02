@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  employee_id: 1
+  name: MyString
+  number: 1
+  resource_role_id: 1
+  experience: MyText
+  billing_rate: 1.5
+  updated_by: 1
+
+two:
+  employee_id: 1
+  name: MyString
+  number: 1
+  resource_role_id: 1
+  experience: MyText
+  billing_rate: 1.5
+  updated_by: 1

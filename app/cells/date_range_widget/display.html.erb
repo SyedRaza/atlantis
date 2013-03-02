@@ -1,0 +1,32 @@
+<style type="text/css">
+
+</style>
+<h3>Select Date Range</h3>
+<%= form_tag( url_for_event(:submit), :remote=>true, :id=>'date-range', :class=>'simple_form') do %>
+    <div class="input">
+      <span class="hint">From</span>
+      <input type="date" id="from" name="from" value="<%=session[:date_range_from].to_date.to_s %>" size="19"/>
+    </div>
+    <div class="input">
+      <span class="hint">To</span>
+      <input type="date" id="to" name="to" value="<%=session[:date_range_to] %>" size="19"/>
+    </div>
+<% end %>
+<script type="text/javascript">
+    $(function() {
+        var dates = $("#from, #to").datepicker({
+            defaultDate: "+1w",
+            changeMonth: true,
+            onSelect: function(selectedDate) {
+                var option = this.id == "from" ? "minDate" : "maxDate",
+                        instance = $(this).data("datepicker");
+                date = $.datepicker.parseDate(
+                        instance.settings.dateFormat ||
+                                $.datepicker._defaults.dateFormat,
+                        selectedDate, instance.settings);
+                dates.not(this).datepicker("option", option, date);
+                $("#date-range").callRemote();
+            }
+        });
+    });
+</script>

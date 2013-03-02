@@ -1,0 +1,39 @@
+<div id="<%= @opportunity.id %>" class="opportunity-detail">
+
+  <div id="close">
+    <a class="thick-view-close" id="<%= @opportunity.id %>" href=''><img src='/themes/white/images/icons/cross-active.png'></img></a>
+  </div>
+  <div id="opportunity-left">
+    <div id="age">
+      <%= @opportunity.age %>
+    </div>
+    <div id="status">
+      <%= @opportunity.opportunity_status.name %>
+    </div>
+  </div>
+  <div id="opportunity-right">
+    <div id="title-source">
+      <h3><%= link_to @opportunity.title, opportunity_url(@opportunity) %></h3>
+      <% if @opportunity.source_type == "Lead" %>
+          <h5><%= @opportunity.source.title %></h5>
+      <% elsif @opportunity.source_type == "Vteam" %>
+          <h5><%= @opportunity.source.name %></h5>
+      <% end %>
+    </div>
+    <div id="skill-experience">
+      <div id="upper"><b>Experience:</b> <%= @opportunity.experience %></div>
+      <div id="lower"><b>Skill Area:</b> <%= simple_format @opportunity.skill_area %></div>
+    </div>
+  </div>
+  <div id="opportunity-thick-view-options" class="thick-view-options">
+    <%= options_menu do |m| %>
+        <%= m.item link_to 'Show', opportunity_path(@opportunity) %>
+        <%= m.item link_to 'Edit', edit_opportunity_path(@opportunity) %>
+        <%= m.item link_to 'New Note', "opportunities/#{@opportunity.id}/notes/new", :class=>"display-new-note", :id=>@opportunity.id %>
+    <% end %>
+  </div>
+  <div class="notes-heading">
+    <h3>Notes</h3>
+  </div>
+  <%= render :partial => 'shared/notes_list', :locals => {:notes=>@opportunity.notes[0..2]} %>
+</div>

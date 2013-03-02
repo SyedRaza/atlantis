@@ -1,0 +1,10 @@
+<%= content_for :js do %>
+    <%= javascript_include_tag 'notes/global' %>
+<% end %>
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag '/notes/index' %>
+<% end %>
+
+<h1>New <%= @note.type.title %> Note</h1>
+
+<%= render 'form_1' %>

@@ -1,0 +1,36 @@
+<div>
+  <span><%= raw page_entries_info @companies %></span>
+</div>
+<ul id="companies_new_list" class="companies_new_list">
+  <% @companies.each do |c| %>
+    <li id="list-row-<%= c.id %>" class="company_new">
+
+      <div class="type all">
+        <%= c.age %>
+      </div>
+
+      <div class="name">
+        <%= link_to c.title, company_url(c) %>
+      </div>
+      <br/>
+
+      <div class="contact-detail small gray">
+        <% if c.emails.count > 0 %>
+          <a href="mailto:<%= c.emails.first %>"><span class="ui-icon ui-icon-mail-closed">&nbsp;</span><span class="gray small"><%= c.emails.first %></span></a>
+        <% end %>
+        <% if c.phones.count > 0 %>
+          <span class='ui-icon ui-icon-person'>&nbsp;</span><span class="gray small"><%= c.phones.first %></span>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= options_menu do |o| %>
+          <%= o.item link_to('Show', company_path(c.id)) %>
+          <%= o.item link_to('Edit', edit_company_path(c.id)) %>
+          <%= o.item link_to('New Note', "companies/#{c.id}/notes/new", :class=>"display-new-note", :id=>c.id) %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<%= processed_pagination(@contacts) %>

@@ -1,0 +1,10 @@
+<% if (@company.errors.any?) %>
+        alert('<%= escape_javascript( @company.errors.full_messages.to_s ) %>');
+<% else %>
+    $('#new_company_dialog').dialog('close');
+    $('#lead_company').val("<%= "#{@company.title}" %>");
+    var a = $('#lead_company').parent("div").append("<a id='<%=@company.id%>' href='/companies/<%=@company.id%>/edit'>Edit</a>");
+    $('#lead_company_id').val(<%= @company.id %>);
+    $('#lead_title').focus();
+<% end %>
+

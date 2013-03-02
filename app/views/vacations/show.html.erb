@@ -1,0 +1,13 @@
+
+
+<%= show_for @vacation do |s| %>
+  <%= s.attribute :vacation_type_id %>
+  <%= s.attribute :reason %>
+<% end %>
+<%= show_for @vacation.resource_vteam_allocation.vteam do |rv| %>
+  <%= rv.attribute :name %>
+  <%= rv.attribute :vteam_status %>
+<% end %>
+
+<%= link_to 'Edit', edit_vteam_vacation_path(@vacation) %> |
+<%#= link_to 'Back', vacations_path %>

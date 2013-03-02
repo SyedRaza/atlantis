@@ -1,0 +1,18 @@
+<%= content_for :header do %>
+    <h1>Login to System</h1>
+<% end %>
+
+<%= content_for :css do %>
+    <%= theme_stylesheet_link_tag 'devise/login' %>
+<% end %>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= f.input :email, :hint=>'Email Address', :label=>false, :input_html=>{:size=>30} %>
+    <%= f.input :password, :hint=>'Password', :label=>false, :input_html=>{:size=>30} %>
+    <% if devise_mapping.rememberable? -%>
+        <%= f.input :remember_me, :as=>:boolean, :hint=>'Remember me', :label=>false %>
+    <% end %>
+    <br />
+    <%= f.submit "Signin", :class=>'button big' %>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

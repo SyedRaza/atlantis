@@ -1,0 +1,12 @@
+<%= show_for @resource do |s| %>
+  <%= s.attribute :employee_id %>
+  <%= s.attribute :name %>
+  <%= s.attribute :number %>
+  <%= s.attribute :resource_role_id %>
+  <%= s.attribute :experience %>
+  <%= s.attribute :billing_rate %>
+  <%= s.attribute :updated_by %>
+<% end %>
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', resources_path %>

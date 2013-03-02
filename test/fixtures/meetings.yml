@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date_of_meeting: 2011-03-16
+  attendees: MyText
+  minutes_of_meeting: MyText
+
+two:
+  date_of_meeting: 2011-03-16
+  attendees: MyText
+  minutes_of_meeting: MyText

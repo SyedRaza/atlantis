@@ -1,0 +1,28 @@
+<% if request.referrer.split("/")[3] == "leads" %>
+<% url = "leads" %>
+<% elsif request.referrer.split("/")[3] == "contacts" %>
+<% url = "contacts" %>
+<% end %>
+<%= simple_form_for @company,:url=>{:controller=>url} do |f| %>
+    <% if @company.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@company.errors.count, "error") %> prohibited this contact from being saved:</h2>
+          <ul>
+            <% @company.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.input :title, :input_html=>{:size=>'25',:class=>'fix'} %>
+    <%= f.association :industry, :input_html=>{:class=>'auto fix'} %>
+    <%= f.simple_fields_for :phones do |f| %>
+        <%= f.association :phone_type, :label=>"Phone Type", :input_html=>{:class=>'auto fix'} %>
+        <%= f.input :phone_number, :label=>"Phone Number", :input_html=>{:size=>'15',:class=>'fix'} %>
+    <% end %>
+    <div class="actions">
+    <%= f.button :submit, :class=>'button big' %>
+    </div>
+
+<% end %>

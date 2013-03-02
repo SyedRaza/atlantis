@@ -1,0 +1,39 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag "meetings/show" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<% content_for :js do %>
+    <%= javascript_include_tag 'notes/global' %>
+    <%= javascript_include_tag "meetings/show" %>
+<% end %>
+<%= content_for :header do %>
+    <h1><%= "#{@meeting.meeting_type} Meeting on #{l @meeting.date_of_meeting}" %></h1>
+    <%= link_to 'Close', meetings_path, :class=>'button big right' %>
+    <%= link_to 'Edit', edit_meeting_path(@meeting), :class=>'button big right' %>
+<% end %>
+<%= content_for :sidebar do %>
+    <%= render :partial=>'show_sidebar' %>
+<% end %>
+
+<%= show_for @meeting do |s| %>
+    <%= s.attribute :start_time, :format => :time %>
+    <%= s.attribute :end_time, :format => :time %>
+    <%= s.attribute :attendees %>
+    <%= show_for_row "# of attendees", @meeting.number_of_attendees %>
+    <%= show_for_row "Meeting Time", print_time(@meeting.meeting_time) %>
+    <%= show_for_row "Employee Time", print_time(@meeting.total_attendees_meeting_time) %>
+
+    <%= s.attribute :minutes_of_meeting %>
+<% end %>
+
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <h2 style="float:left;">Notes</h2>
+  <%= if can?(:create, Note) then
+          render_note_type_menu('Add New Note', meeting_path(@placement))
+      end %>
+</div>
+<br class="clear"/>
+<div class="notes-container">
+</div>

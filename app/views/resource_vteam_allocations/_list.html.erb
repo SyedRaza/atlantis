@@ -1,0 +1,32 @@
+<h1>Current Resources</h1>
+<hr class="ver-gap"/>
+<%= data_list_for @resource_vteam_allocations_active, :entry_name=>"Resources" do |l| %>
+    <%= l.blank_column { "&nbsp".html_safe } %>
+    <%= l.column :resource, :value_method=>:title, :width=>140 %>
+    <%= l.column :join_date, :width=>130, :label=>'Join date' %>
+    <%= l.column :resource_type, :width=>140, :label=>'Role' %>
+    <%= l.column :billing_rate, :width=>130, :label=>'Billing Rate' %>
+    <%= l.options_column :class=>'options', :width=>30 do %>
+        <%= link_item 'Detach Resource', "/vteams/#{object.vteam.id}/resource_vteam_allocations/#{object.id}/release" %>
+    <% end %>
+<% end %>
+
+<%= processed_pagination(@resource_vteam_allocations_active) %>
+<hr class="ver-gap"/>
+<h1>Past Resources</h1>
+<hr class="ver-gap"/>
+<%= data_list_for @resource_vteam_allocations_deactive do |l| %>
+    <%= l.blank_column { link_to("<span class='ui-icon ui-icon-plus'></span>".html_safe,
+                                 "/vteams/#{object.vteam.id}/resource_vteam_allocations/details/#{object.id}",
+                                 :class=>'ui-state-highlight plus', :remote=>true) } %>
+
+    <%= l.column :resource, :value_method=>:title, :width=>140 %>
+    <%= l.column :join_date, :width=>100, :label=>'Join date' %>
+    <%= l.column :release_date, :width=>130, :label=>'Release Date' %>
+    <%= l.column :billing_rate, :width=>130, :label=>'Billing Rate' %>
+
+
+
+<% end %>
+<%= processed_pagination(@resource_vteam_allocations_deactive) %>
+

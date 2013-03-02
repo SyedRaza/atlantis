@@ -1,0 +1,17 @@
+#signature {
+    font-size:11px;
+    display:inline-block;
+    width:100%;
+    margin-top:15px;
+}
+#signature hr {
+    clear: both;
+    height:1px;
+    width:100%;
+    border: none;
+    border-top: #AAA solid 1px;
+}
+#signature em{
+    font-size:11px;
+    color:#AAA;
+}

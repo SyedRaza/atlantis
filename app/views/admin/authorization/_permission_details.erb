@@ -1,0 +1,11 @@
+<%= f.simple_fields_for :permissions do |p| %>
+<td class="<%=  cycle('odd', 'even') %>" >
+  <%= p.input :id, :as=>:hidden, :input_html=>{:id=>'pid'} %>
+  <div class="action"><input type="checkbox" value="all"></input></div>
+  <div class="action"><%= p.check_box :can_read, :as=>:boolean,:label=>'', :name=>"pread_#{@counter}" %></div>
+  <div class="action"><%= p.check_box :can_create,:as=>:boolean,:label=>'',  :name=>"pcreate_#{@counter}" %></div>
+  <div class="action"><%= p.check_box :can_edit,:as=>:boolean,:label=>'', :name=>"pedit_#{@counter}" %></div>
+  <div class="action"><%= p.check_box :can_delete,:as=>:boolean,:label=>'', :name=>"pdelete_#{@counter}" %></div>
+  <% @counter += 1  %>
+</td>
+<%  end %>

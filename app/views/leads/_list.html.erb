@@ -1,0 +1,49 @@
+<div class="total_records">
+  <span><%= raw page_entries_info @leads %></span>
+</div>
+<ul id="leads_list" class="leads_list">
+  <% @leads.each do |l| %>
+    <li id="list-row-<%= l.id %>" class="lead">
+      <div class="type <%= l.lead_status.to_s.underscore %>">
+        <%= truncate("#{l.lead_status}", :length => 12) %>
+        <br/>
+
+          <span class="small gray age"><%= l.age %></span>
+
+        </div>
+        <div class="name">
+          <%= link_to l.contact.complete_name, lead_url(l) %>
+        </div>
+        <% if l.contact.companies.count > 0 %>
+            <div class="small gray">
+              <%= "#{l.contact.companies.first}" %>
+              <% unless  l.lead_source.nil? %>
+                  <%#= "– referred by #{l.lead_source}" %>
+              <% end %>
+            </div>
+        <% end %>
+        <br/>
+        <div class="contact-detail small gray">
+          <% if l.contact.phones.count > 0 %>
+              <a href="mailto:<%= l.contact.emails.first %>"><span class="ui-icon ui-icon-mail-closed">&nbsp;</span><span class="gray small"><%= l.contact.emails.first %></span></a>
+              <%= "<span class='ui-icon ui-icon-person'>&nbsp;</span> #{l.contact.phones.first}".html_safe %>
+          <% end %>
+        </div>
+
+        <div class="actions">
+          <%= options_menu do |o| %>
+              <%= o.item link_to('Show', lead_path(l.id)) %>
+              <%= o.item link_to('Edit', edit_lead_path(l.id)) %>
+              <%= o.item link_to('Print', lead_path(l.id, :format=>:pdf)) %>
+              <%= o.item link_to('New Note', "leads/#{l.id}/notes/new", :class=>"display-new-note", :id=>l.id) %>
+              <%= o.item link_to('Create Opportunity', "leads/#{l.id}/opportunities/new") %>
+
+
+          <% end %>
+        </div>
+      </li>
+      <li id="newxdoc-<%= l.id %>" class="newdoc_li">
+      </li>
+  <% end %>
+</ul>
+<%= processed_pagination(@leads) %>

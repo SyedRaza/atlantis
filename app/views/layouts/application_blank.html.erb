@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %> </title>
+    <%= render :partial=>'/layouts/css' %>
+    <%= yield :css %>
+
+    <%= render :partial=>'/layouts/js' %>
+    <%= yield :javascript %>
+    <%= csrf_meta_tag  %>
+  </head>
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <article id="authentication">
+      <header>
+        <a id="logo" href="/"></a>
+      </header>
+      <section class="main">
+        <article>
+          <header>
+            <%= yield :page_header  %>
+          </header>
+          <section class="content">
+            <%= yield %>
+          </section>
+        </article>
+      </section>
+    </article>
+  </body>
+</html>

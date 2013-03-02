@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  DateEffective: 2011-03-16
+  AvailableResource: MyText
+  FreeingUpFromVteams: MyText
+  Reserved: MyText
+
+two:
+  DateEffective: 2011-03-16
+  AvailableResource: MyText
+  FreeingUpFromVteams: MyText
+  Reserved: MyText

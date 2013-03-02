@@ -1,0 +1,92 @@
+<%= simple_form_for @company, :validations => {:options => {:errorClass => "bad-field"}} do |f| %>
+
+    <% if @company.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@company.errors.count, "error") %> prohibited this contact from being saved:</h2>
+          <ul>
+            <% @company.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div id='generalInfo'>
+      <%= f.input :title, :input_html => {} %>
+      <%= f.association :industry, :input_html=>{} %>
+
+      <%= f.label :phones %>
+      <div class="loopable-options">
+        <div id="fields">
+          <% c = 0 %>
+          <%= f.simple_fields_for :phones do |f| %>
+              <div id="field_<%= c %>" class="field">
+                <%= f.association :phone_type, :hint=>'phone type', :input_html=>{}, :label=>false, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :phone_number, :label=>false, :input_html=>{:class=>"margin"}, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :_destroy, :as=>:hidden %>
+              </div>
+              <% c += 1 %>
+          <% end %>
+        </div>
+      </div>
+
+      <%= f.label :websites %>
+      <div class="loopable-options">
+        <div id="fields">
+          <% c = 0 %>
+          <%= f.simple_fields_for :websites do |f| %>
+              <div id="field_<%= c %>" class="field">
+                <%= f.association :website_type, :hint=>'website type', :input_html=>{}, :label=>false, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :url, :label=>false, :input_html=>{:class=>"margin"}, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :_destroy, :as=>:hidden %>
+              </div>
+              <% c += 1 %>
+          <% end %>
+        </div>
+      </div>
+
+      <%= f.label :emails %>
+      <div class="loopable-options">
+        <div id="fields">
+          <% c = 0 %>
+          <%= f.simple_fields_for :emails do |f| %>
+              <div id="field_<%= c %>" class="field">
+                <%= f.association :email_type, :hint=>'email type', :input_html=>{}, :label=>false, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :email, :label=>false, :input_html=>{:class=>"margin"}, :wrapper_html=>{:style=>'float:left;'} %>
+                <%= f.input :_destroy, :as=>:hidden %>
+              </div>
+              <% c += 1 %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <h3>Address Details</h3>
+    <div id="addressInfo">
+      <%= f.simple_fields_for :addresses do |f| %>
+          <div class="loopable-options">
+            <div id="fields">
+              <div id="field_0" class="field">
+                <div style="display: block; float: left;">
+                  <%= f.association :address_type, :input_html=>{} %>
+                  <%= f.association :country, :input_html=>{:class=>'country', :id=>'country'} %>
+                  <%= f.input :street, :input_html=>{:class=>'street', :id=>'street'} %>
+                  <%= f.input :city, :input_html=>{:class=>'city', :id=>'city'} %>
+                  <%= f.input :state, :input_html=>{:class=>'state', :id=>'state'} %>
+                  <%= f.input :zip, :input_html=>{:class=>'zip', :id=>'zip'} %>
+                  <%= f.input :lat, :as=>:hidden, :input_html=>{:class=>'lat', :id=>'lat'} %>
+                  <%= f.input :lng, :as=>:hidden, :input_html=>{:class=>'lng', :id=>'lng'} %>
+                  <%= f.input :_destroy, :as=>:hidden %>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <br/>
+    <div class="actions">
+    <%= f.button :submit, :class=>'button big' %> <span style="vertical-align: bottom">or</span>
+    <%= link_to 'Cancel', request.referrer , :class=>'big' %>
+    </div>
+<% end %>

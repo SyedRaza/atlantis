@@ -1,0 +1,128 @@
+
+#placement_selector {
+    width: 80px;
+}
+/*.show-details {
+    display:inline-block;
+    min-height:175px;
+    height:auto;
+}*/
+.sidetabs-container .sidetabs-pane {
+    width: 87%;
+}
+
+#filter-type > label {
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+#close {
+    float: left;
+    clear: both;
+    margin-left: 5px;
+}
+
+#filter-type {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.resource-detail {
+    border-bottom: 1px solid #CCCCCC;
+    float: left;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    text-align: left;
+    width: 100%;
+}
+#resource-left {
+    float: left;
+    margin-top: 4px;
+    padding: 5px;
+    text-align: center;
+    width: 15%;
+}
+.remove-filter{
+    display: inline-block;
+    float: right;
+}
+#resource-right {
+    float: left;
+    margin: 10px 0px;
+    
+}
+#search_date_effective_greater_than_or_equal_to {
+    max-width: 160px;
+}
+
+#search_date_effective_less_than_or_equal_to {
+    max-width: 160px;
+}
+#age {
+    background-color: #999999;
+    border: 1px solid #424542;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    margin-left: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 65px;
+}
+
+#title-date {
+    border-right: 1px solid #CCCCCC;
+    clear: both;
+    float: left;
+    display: inline;
+    margin-top: 4px;
+    min-height: 85px;
+    overflow: hidden;
+    padding: 5px;
+    /*    padding: 5px 1px 5px 15px;*/
+    text-align: left;
+    width: 40%;
+}
+#resource-situation  {
+    clear: none;
+    float: right;
+    margin-top: 4px;
+    overflow: hidden;
+    text-align: left;
+    width: 54%;
+}
+#resource-situation #upper {
+    border-bottom: 1px solid;
+    margin-top: 4px;
+    min-height: 50px;
+    text-align: left;
+
+}
+#resource-situation #lower {
+    margin-top: 4px;
+    min-height: 50px;
+    text-align: left;
+}
+
+#new_x_doc{
+    margin-top: 10px;
+}
+/*#x_doc_types_list{
+    margin-left: 150px;
+    margin-bottom: 35px;
+}*/
+span.new_note p{
+    display: block;
+    margin-top: 25px;
+}
+.bottom-border-active{
+    display: inline-block;
+}
+
+.bottom-border #xdoc_type_menu{
+    display: inline-block;
+    width: auto;
+}

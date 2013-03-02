@@ -1,0 +1,21 @@
+<div class="total-records">
+  <% unless params[:thick]=="true" %>
+      <%= raw page_entries_info @notes, :entry_name => 'Notes' %>
+      <% if  request.path.eql?("/notes") %>
+          <%= descriptive_title %>
+      <% end %>
+
+  <% end %>
+</div>
+<dl id="notes-list">
+  <% if @notes.blank? %>
+      <div id="noxdocs"><b><%#= "No XDocs" %></b></div>
+  <% else %>
+      <% @notes.each do |x| %>
+          <%= render :partial=>'note_list_item', :locals=>{:x=>x} %>
+      <% end %>
+      <div id="x_doc_pagination">
+        <%= will_paginate @notes %>
+      </div>
+  <% end %>
+</dl>

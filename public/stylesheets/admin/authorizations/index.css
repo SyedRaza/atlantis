@@ -1,0 +1,22 @@
+.data-table td.odd{
+  background-color: #EEE;
+}
+.data-table td.even{
+  background-color: #FFF;
+}
+.data-table td div.action{
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+}
+.data-table td div.space{
+  display: inline-block;
+  width: 20px;
+}
+.data-table td{
+  border-bottom: #E5E5E5 solid 1px;
+  border-right: #E5E5E5 solid 1px;
+}
+.data-table td.highlight {
+  background-color: #D4F4FF;
+}

@@ -1,0 +1,26 @@
+<%= content_for :sidebar do %>
+    <%= render :partial => 'filter' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1>Vteams</h1>
+    <%= link_to '<span class="ui-icon ui-icon-document">&nbsp;</span>New Vteam'.html_safe, new_vteam_url, :class=>'right', :style=>'margin-right:95px;' %>
+<% end %>
+
+<%= content_for :js do %>
+    <%= javascript_include_tag "vteams/index" %>
+    <%= javascript_include_tag "notes/global" %>
+<% end %>
+
+<%= content_for :css do %>
+    <%= stylesheet_link_tag "vteams/index" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+
+<div id="vteams_container" class="sidetabs-container">
+  <div id="vteam_selector" class="sidetabs-tabs">
+    <%= side_tabs_for_periods(params[:controller].to_sym, ['All Active', 'Today', 'This Week', 'This Month', 'This Year', 'Archives']) %>
+  </div>
+  <div id="vteams" class="sidetabs-pane">
+  </div>
+</div>

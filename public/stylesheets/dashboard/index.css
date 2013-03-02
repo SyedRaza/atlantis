@@ -1,0 +1,110 @@
+/* 
+    Document   : index
+    Created on : Jan 25, 2011, 6:26:23 PM
+    Author     : Syed Raza Khalid
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#notes_selector {
+    width: 80px;
+}
+
+.sidetabs-container .sidetabs-pane {
+    width: 87%;
+}
+
+.sidetabs-tabs ul li > a {
+    width: 100%;
+}
+
+.sidetabs-tabs ul li > a.selected {
+    width: 115%;
+}
+
+#filter-type > label {
+    width: auto;
+    margin: 0;
+    font-size: 1em;
+}
+
+#filter-type {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#age {
+    background-color: #999999;
+    border: 1px solid #424542;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    margin-left: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 65px;
+}
+
+#status {
+    border: 1px solid #E5E5E5;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 65px;
+}
+
+#name-manager {
+    border-right: 1px solid #CCCCCC;
+    clear: both;
+    float: left;
+    margin-top: 4px;
+    min-height: 85px;
+    overflow: hidden;
+    padding: 5px;
+    text-align: left;
+    width: 40%;
+}
+
+#dev-tech {
+    clear: none;
+    float: right;
+    margin-top: 4px;
+    overflow: hidden;
+    text-align: left;
+    width: 54%;
+}
+
+#dev-tech #upper {
+    border-bottom: 1px solid;
+    margin-top: 4px;
+    min-height: 50px;
+    text-align: left;
+    width: 290px;
+}
+
+#dev-tech #lower {
+    margin-top: 4px;
+    min-height: 50px;
+    text-align: left;
+}
+
+#close {
+    float: left;
+    clear: both;
+    margin-left: 650px;
+}
+
+.ui-button-text-only .ui-button-text {
+    padding: 5px 4px;
+}

@@ -1,0 +1,16 @@
+<% @vacations.each do |vacation| %>
+  <ul id="<%= vacation.id %>" class="list-row <%= cycle('odd', 'even') %>" >
+    <li>
+      <label>has taken&nbsp;</label>
+      <%= vacation.vacation_type.title.downcase %>&nbsp;
+      <label>&nbsp;leave of&nbsp;</label>
+      <%= business_days_between(vacation.from,
+        vacation.to) %><label>&nbsp;days
+        starting from&nbsp;</label><%=l vacation.from %>
+      <label>to&nbsp;</label><%=l vacation.to %>
+      <label>due to&nbsp;</label><span class ="show_text"><%= vacation.reason %></span>
+
+
+    </li>
+  </ul>
+<% end %>

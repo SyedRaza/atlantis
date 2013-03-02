@@ -1,0 +1,10 @@
+$('<div />').attr('id','new_company_dialog').appendTo('body');
+$('#new_company_dialog').html('');
+$('#new_company_dialog').attr('title', 'Create New Company');
+
+$('#new_company_dialog').html('<%= escape_javascript( render :partial=>'min_form') %>');
+$('#new_company_dialog').dialog({
+  width:435,
+  height:250
+});
+$('#company_industry_id').focus();

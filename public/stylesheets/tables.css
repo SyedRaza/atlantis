@@ -1,0 +1,32 @@
+.data-table{
+  font-size: 80%;
+}
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 4px;
+  border: 1px solid #E4E4E4;
+  box-shadow: 5px 5px 0px rgba(100,100,100,0.2);
+  -moz-box-shadow: 5px 5px 0px rgba(100,100,100,0.2);
+  -webkit-box-shadow: 5px 5px 0px rgba(100,100,100,0.2);
+}
+.data-table td{
+  padding: 2px 5px;
+  margin: 0;
+}
+.data-table tr.odd{
+  background-color: #EEE;
+}
+.data-table tr.even{
+  background-color: #FFF;
+}
+.data-table h2 {
+  padding: 0;
+  margin: 0;
+  font-size: 1.2em;
+  color: #0AA9E8;
+}
+.data-table th{
+  background-color: #EEE;
+  border-bottom: #0AA9E8 solid 1px;
+}

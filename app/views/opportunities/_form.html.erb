@@ -1,0 +1,43 @@
+<%= simple_form_for(@opportunity) do |f| %>
+    <%= f.error_notification %>
+
+    <div id="opportunity-wizard" class="form-tabs-container">
+      <div class="inputs">
+        <%= f.input :title, :input_html => {} %>
+        <%= f.association :opportunity_type, :label => "Type", :input_html => {} %>
+        <%= f.association :opportunity_status, :label => "Status", :input_html => {} %>
+        <%= f.input :source_type, :as=>:select, :collection=> ["Lead", "Vteam"], :include_blank => false, :selected=>@opportunity.source_type %>
+        <%= f.label :source_title, "Source Title", :class=>"required", :id=>"source_title_label" %>
+        <% unless @opportunity.source_type.blank? %>
+            <% if @opportunity.source_type=="Vteam" %>
+                <%= f.input :source_title, :as=>:select, :label=>false, :collection=> @opportunity.source_type.constantize.all, :include_blank => false, :selected=>@opportunity.source_id, :input_html=>{:class=>"Vteam"} %>
+                <%= f.input :source_title, :as=>:select, :label=>false, :collection=> Lead.all, :include_blank => false, :input_html=>{:class=>"Lead hidden"} %>
+            <% else %>
+                <%= f.input :source_title, :as=>:select, :label=>false, :collection=> @opportunity.source_type.constantize.all, :include_blank => false, :selected=>@opportunity.source_id, :input_html=>{:class=>"Lead"} %>
+                <%= f.input :source_title, :as=>:select, :label=>false, :collection=> Vteam.all, :include_blank => false, :input_html=>{:class=>"Vteam hidden"} %>
+            <% end %>
+        <% else %>
+            <%= f.input :source_title, :as=>:select, :label=>false, :collection=> Lead.all, :include_blank => false, :input_html=>{:class=>"Lead"} %>
+            <%= f.input :source_title, :as=>:select, :label=>false, :collection=> Vteam.all, :include_blank => false, :input_html=>{:class=>"Vteam hidden"} %>
+        <% end %>
+
+        <% if @opportunity.source_id %>
+            <%= f.input :source_id, :as => :hidden, :input_html => {:value => @opportunity.source_id} %>
+        <% else %>
+            <%= f.input :source_id, :as => :hidden, :input_html=> {:value=>'1'} %>
+        <% end %>
+
+        <%= f.input :created_effective, :as => :string, :input_html => {:class => "datepicker"} %>
+        <%= f.input :expiry_date, :as => :string, :input_html => {:class => "datepicker"} %>
+        <%= f.input :seats, :input_html => {} %>
+        <%= f.input :experience, :input_html => {} %>
+        <%= f.input :skill_area, :input_html => {:rows => "7", :columns => "70"} %>
+        <%= f.input :note, :input_html => {:rows => "7", :columns => "70"} %>
+      </div>
+      <div class="actions">
+        <%= f.button :submit, :class=>'button big' %> <span style="vertical-align: bottom">or</span>
+        <%= link_to 'Cancel', request.referrer, :class=>'big' %>
+      </div>
+    </div>
+
+<% end %>

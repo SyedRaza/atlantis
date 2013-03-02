@@ -1,0 +1,14 @@
+<div class="lead_list">
+  <%= show_for leads do |op| %>
+    <dl class="wrapper">
+      <dt class="label"><span class="ui-icon ui-icon-battery-0">&nbsp;</span></dt>
+      <dd class="content"><%= link_to op.object.title, lead_url( op.object ) %> </dd>
+    </dl>
+  <%#= op.attribute :title, :to_sentence=>true if op.object.title.present?-%>
+  <%#= op.association :lead_type, :label=>"Type" %>
+    <%= op.attribute :created_at, :label=> "Posted" if op.object.created_at.present?-%>
+    <%= op.association :lead_status, :label=> "Status" if op.object.lead_status.present?-%>
+  <%#= op.association :lead_source, :label=> "Source" %>
+  <%#= op.attribute :primary_skills, :label=> "Skills" if op.object.primary_skills.present?-%>
+  <% end %>
+</div>

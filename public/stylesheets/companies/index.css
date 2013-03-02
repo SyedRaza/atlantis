@@ -1,0 +1,126 @@
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.88em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+
+
+#new_x_doc{
+    margin-top: 10px;
+}
+
+span.new_note p{
+    display: block;
+    margin-top: 30px;
+}
+
+/*--------------------- new listing style -------------------------*/
+.ui-icon-person{
+    background-position: -144px -98px
+}
+
+.ui-icon-mail-closed{
+    background-position: -80px -98px;
+}
+
+.companies_new_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.company_new .type.all {
+    background-color: #CCCCCC;
+}
+
+.company_new {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.company_new:hover  {
+    background-color: seashell;
+}
+.company_new:hover .actions{
+    display:block;
+}
+
+.company_new div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.company_new .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.company_new .name {
+    font-size: 12px;
+}
+
+.company_new .contact-detail {
+
+}
+
+.company_new .type > strong {
+    font-size: 10px;
+}
+
+.company_new .small {
+    font-size: 11px;
+    line-height: 22px;
+}
+
+.company_new .gray {
+    color: #696969;
+}
+
+.company_new .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.company_new .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.company_new .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+.ui-icon{
+    vertical-align: text-top;
+}
+/*--------------------- new listing style -------------------------*/

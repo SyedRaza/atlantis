@@ -1,0 +1,4 @@
+$('#dynamic-ajax-container').html("<%=  escape_javascript(render :partial => 'list') %>");
+//makeSameWidth( 'ul.list-headers.current', 'ul.list-row.current');
+//makeSameWidth( 'ul.list-headers.past', 'ul.list-row.past');
+$('.pagination a').attr('data-remote', 'true');

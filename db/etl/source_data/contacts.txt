@@ -1,0 +1,18 @@
+7,Gene, Parrish,Gene, Parrish,70
+40,Steven,Byrne,Steven,Byrne,18
+41,Rodney,Daugherty,Rodney,Daugherty,79
+58,Oliver,Wolf,Oliver,Wolf,93
+90,Zac,Adler,Zac,Adler,140
+99,Haji,Akhi,Haji,Akhi,56
+140,Lee,Brown,Lee,Brown,111
+183,Shannon,Fermanian,Shannon,Fermanian,60
+208,Paul,Hawkes,Paul,Hawkes,13
+210,Steven,Haynes,Steven ,Haynes,5
+232,Jud,Jenkins,Jud ,Jenkins,4
+270,Bernie,Marasco,Bernie ,Marasco,1
+303,Akito,Nakahara,Akito ,Nakahara,3
+310,Ben,Nove,Ben ,Nove,2
+310,Ben,Nove,Ben,Nove,36
+338,Nick,Rodriguez,Nick,Rodriguez,16
+385,Bjorn,Symister,Bjorn,Symister,82
+385,Bjorn,Symister,Bjorn,Symister,125

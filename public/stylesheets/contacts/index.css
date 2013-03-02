@@ -1,0 +1,139 @@
+#filter-type > label{
+    width:auto;
+    margin:0;
+    font-size:0.85em;
+}
+#filter-type{
+    display:block;
+    width:100%;
+    margin-top:5px;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 5px 4px;
+}
+/*
+note management
+*/
+/*
+dl#x_doc_types_list{
+    margin-top: -70px;
+}*/
+#new_x_doc{
+    margin-top: 10px;
+}
+/*#x_doc_types_list{
+    margin-left: 150px;
+    margin-bottom: 35px;
+}*/
+span.new_note p{
+    display: block;
+    margin-top: 30px;
+}
+
+/*--------------------- new listing style -------------------------*/
+
+.ui-icon-person{
+    background-position: -144px -99px;
+}
+
+.ui-icon-mail-closed{
+    background-position: -80px -97px;
+}
+
+.contacts_new_list {
+    display: inline-block;
+    width: 100%;
+}
+
+.contact_new .type.age {
+    background-color: #CCCCCC;
+}
+
+.contact_new {
+    display: inline-block;
+    border-bottom: #C0C0C0 dotted 1px;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: top;
+    position: relative;
+}
+
+.contact_new:hover  {
+    background-color: seashell;
+}
+.contact_new:hover .actions{
+    display:block;
+}
+
+.contact_new div {
+    padding: 0;
+    margin-right: 5px;
+    font-family: 'Lucida Grande', Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    float: left;
+    height: 15px;
+}
+
+.contact_new .type {
+    display: block;
+    float: left;
+    border-radius: 10px 0 0 10px;
+    padding: 0;
+    padding-right: 5px;
+    width: 75px;
+    text-align: right;
+    height: 15px;
+    margin-right: 3px;
+    margin-bottom: 15px;
+    line-height: 14px;
+}
+
+.contact_new .name {
+    font-size: 12px;
+}
+
+.contact_new .contact-detail {
+
+}
+
+.contact_new .type > strong {
+    font-size: 10px;
+}
+
+.contact_new .small {
+    font-size: 11px;
+    line-height: 19px;
+}
+
+.contact_new .gray {
+    color: #696969;
+}
+
+.contact_new .contact-detail a {
+    color: #696969;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.contact_new .actions {
+    position:absolute;
+    right:0;
+    top:0;
+    display:none;
+    text-align:left;
+    margin-top: 10px;
+}
+
+.contact_new .actions a {
+    font-size: 11px;
+}
+.age
+{
+    line-height: 25px;
+}
+
+.ui-icon{
+    vertical-align: text-top;
+}
+/*--------------------- new listing style -------------------------*/

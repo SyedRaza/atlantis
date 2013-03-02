@@ -1,0 +1,17 @@
+<%= simple_form_for(@resource) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :employee_id %>
+    <%= f.input :name %>
+    <%= f.input :number %>
+    <%= f.input :resource_role_id %>
+    <%= f.input :experience %>
+    <%= f.input :billing_rate %>
+    <%= f.input :updated_by %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

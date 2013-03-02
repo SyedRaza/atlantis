@@ -1,0 +1,28 @@
+<div class="contact_list" >
+  <%= show_for contact do |l| %>
+    <dl class="wrapper">
+      <dt class="label"><span class="ui-icon ui-icon-battery-0">&nbsp;</span></dt>
+      <dd class="content"><%= link_to l.object.title, contact_url( l.object ) %> </dd>
+    </dl>
+
+    <% unless l.object.phones.blank? %>
+      <%= l.association :phones, :to_sentence=>true,
+        :label=>"<span class='ui-icon ui-icon-contact'>&nbsp;</span>".
+        html_safe%>
+    <% end %>
+    <% unless l.object.emails.blank? %>
+      <%= l.association :emails, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-mail-closed'>&nbsp;</span>".html_safe %>
+    <% end %>
+    <% unless l.object.websites.blank? %>
+      <%= l.association :websites, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-link'>&nbsp;</span>".html_safe %>
+    <% end %>
+
+    <% unless l.object.addresses.blank? %>
+      <% unless l.object.addresses.first.country_id.nil? %>
+        <%= l.association :addresses, :to_sentence=>true, :label=>"<span class='ui-icon ui-icon-home'>&nbsp;</span>".html_safe %>
+      <% end %>
+    <% end %>
+
+
+  <%  end %>
+</div>

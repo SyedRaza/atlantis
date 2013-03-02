@@ -1,0 +1,42 @@
+<h2>Filter By</h2>
+<hr class="ver-gap"/>
+<% def check_class(limit)
+       if limit == 'all_cat' and session[:filter].nil?
+           'selected'
+       elsif session[:filter] == limit
+           'selected'
+       else
+           ''
+       end
+   end
+
+   count_all = 0
+   count_all += @count['Lead'] unless @count['Lead'].nil?
+   count_all += @count['Vteam'] unless @count['Vteam'].nil?
+   count_all += @count['Opportunity'] unless @count['Opportunity'].nil?
+   count_all += @count['Contact'] unless @count['Contact'].nil?
+   count_all += @count['Company'] unless @count['Company'].nil?
+%>
+
+<% if count_all > 0 %>
+    <h3>Category
+      <%= "(#{link_to("clear", "/notes/?filter=all_cat&limit=#{session[:limit]}", {:id=>'clear_filters'})})".html_safe unless (session[:filter] == 'all_cat') %>
+    </h3>
+<% end %>
+<ul>
+  <% unless @count['Lead'].nil? %>
+      <li><%= link_to "Lead (#{@count['Lead']})", "/notes/?filter=lead&limit=#{session[:limit]}", :class=>check_class('Lead') %></li>
+  <% end %>
+  <% unless @count['Vteam'].nil? %>
+      <li><%= link_to "Vteam (#{@count['Vteam']})", "/notes/?filter=vteam&limit=#{session[:limit]}", :class=>check_class('Vteam') %></li>
+  <% end %>
+  <% unless @count['Opportunity'].nil? %>
+      <li><%= link_to "Opportunity (#{@count['Opportunity']})", "/notes/?filter=opportunity&limit=#{session[:limit]}", :class=>check_class('Opportunity') %></li>
+  <% end %>
+  <% unless @count['Contact'].nil? %>
+      <li><%= link_to "Contact (#{@count['Contact']})", "/notes/?filter=contact&limit=#{session[:limit]}", :class=>check_class('Contact') %></li>
+  <% end %>
+  <% unless @count['Company'].nil? %>
+      <li><%= link_to "Company (#{@count['Company']})", "/notes/?filter=company&limit=#{session[:limit]}", :class=>check_class('Company') %></li>
+  <% end %>
+</ul>

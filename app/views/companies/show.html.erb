@@ -1,0 +1,56 @@
+<%= content_for :css do %>
+    <%= stylesheet_link_tag "companies/show" %>
+    <%= theme_stylesheet_link_tag 'notes/index' %>
+<% end %>
+<%= content_for :js do %>
+    <%= javascript_include_tag "notes/global" %>
+    <%= javascript_include_tag 'companies/show' %>
+    <%= javascript_include_tag "jquery.collapsorz_1.1" %>
+<% end %>
+<%= content_for :sidebar do %>
+    <%= render :partial=>'show_sidebar' %>
+<% end %>
+
+<%= content_for :header do %>
+    <h1><%= @company.title %></h1>
+    <%= link_to 'Close', companies_path, :class=>'button big right' %>
+    <%= link_to 'Edit', edit_company_path(@company), :class=>'button big right' %>
+<% end %>
+
+<%= show_for @company do |c| %>
+
+    <% unless @company.industry.blank? %>
+        <%= c.association :industry %>
+    <% end %>
+
+    <% if @company.phones.exists? %>
+        <%= c.association :phones, :to_sentence=>true %>
+    <% end %>
+
+    <% unless @company.emails.blank? %>
+        <%= c.association :emails, :to_sentence=>true %>
+    <% end %>
+
+    <% unless @company.websites.blank? %>
+        <%= c.association :websites, :to_sentence=>true %>
+    <% end %>
+
+    <% unless @company.addresses.blank? %>
+
+        <% unless @company.addresses.first.country_id.nil? %>
+            <%= c.association :addresses, :to_sentence=>true %>
+        <% end %>
+
+    <% end %>
+
+<% end %>
+<hr class="clear"/>
+<br/>
+<div class="bottom-border">
+  <h2 style="float:left;">Notes</h2>
+  <%= if can?(:create, Note) then
+          render_note_type_menu('Add New Note', company_path(@company))
+      end %>
+</div>
+<br class="clear"/>
+<div class="notes-container"></div>

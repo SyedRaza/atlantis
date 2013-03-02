@@ -1,0 +1,54 @@
+<h1>Listing testings</h1>
+<%# day = 1 %>
+<%# while day <= @days %>
+
+<%# day+=1 %>
+<%#= leads = Lead.where("created_at = ?", @created_at[day]) %>
+
+<table>
+  <tr>
+    <th>Day Number</th>
+    &nbsp;
+    <th>Leads</th>
+    &nbsp;
+    <th>Vteams</th>
+    &nbsp;
+  </tr>
+  <%# @start_date.upto @end_date do |d| %>
+  <%# @leads = Lead.where("DATE(created_at) = DATE(?)", d).count %>
+  <td><%#= @leads %></td>
+  <%# end %>
+  <%
+     counts = Lead.count(
+             :conditions => ["created_at >= ? AND created_at <= ?", @start_date.beginning_of_day, @end_date.end_of_day],
+             :group      => "DATE(created_at)"
+     )
+     counts_array = []
+     @start_date.upto @end_date do |d|
+         counts_array << (counts[d.to_date] || 0)
+     end
+
+  %>
+  <%= counts.inspect %>
+  <%= counts_array.inspect %>
+</table>
+<br/>
+
+<%= link_to 'New Testing', new_testing_path %>
+<br/>
+
+<%= m {
+    1 + 2
+} %>
+
+<%= tlist "Raza" do |t| %>
+    <%= t.item {
+        "1"
+    } %>
+    <%= t.item {
+        "2"
+    } %>
+    <%= t.item {
+        "3"
+    } %>
+<% end %>

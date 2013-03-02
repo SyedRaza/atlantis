@@ -1,0 +1,73 @@
+<div id="monthly_team_chart" style="width: 375px; height: 200px;"></div>
+<%= form_tag(url_for_event(:team_total_months_changed), :remote=>true, :id=>'team-total-month-form', :class=>'simple_form') do |f| %>
+    <div class="input">
+      <span class="hint">Total months to show from current month: </span>
+      <select id="total_months_team" name="total_months">
+        <% 1.upto 12 do |m| %>
+            <% if @months_to_show == m %>
+                <option value="<%= m %>" selected="selected"><%= m %></option>
+            <% else %>
+                <option value="<%= m %>"><%= m %></option>
+            <% end %>
+        <% end %>
+      </select>
+    </div>
+<% end %>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('#total_months_team').live('change', function() {
+            $('#team-total-month-form').callRemote();
+        });
+        var options = {
+            chart: { renderTo: 'monthly_team_chart' },
+            title: { text: 'Monthly Active Team Count' },
+            credits : { enabled: false },
+            plotOptions:{
+                line: {
+                    lineWidth : 1
+                },
+                series:{
+                    marker :{
+                        enabled: true,
+                        radius : 3
+                    }
+                }
+            },
+            xAxis: {
+                categories: <%= @days.inspect %>,
+                labels :{
+                    enabled:true,
+                    step : 2
+
+                }
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>' + this.x + ' ' + this.series.name + '</b><br/>' + this.y;
+                }
+            },
+            yAxis:{
+                title: {
+                    text: ''
+                },
+                'min': <%=@min_count%>-0.5,
+                'max': <%=@max_count%>+0.5,
+                endOnTick : false,
+                startOnTick : false,
+            },
+            legend:{
+                enabled : true
+            },
+            series: [
+                <% @monthly_lead_count.each do |key, value| %>
+                {
+                    name: '<%= key %>',
+                    data:<%= value.inspect %>
+                },
+                <% end %>
+            ]
+        };
+
+        new Highcharts.Chart(options);
+    });
+</script>
